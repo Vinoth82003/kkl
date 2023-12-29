@@ -94,11 +94,11 @@
                 </span>
                 <p class="menu-name">Leave table</p>
             </li>
-            <li class="menu-option" style="display: none;">
+            <li class="menu-option upload-option">
                 <span class="icon">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-upload"></i>
                 </span>
-                <p class="menu-name">Shift List</p>
+                <p class="menu-name">Upload</p>
             </li>
         </ul>
     </aside>
@@ -197,6 +197,33 @@
         </div>
     </section>
 
+    <section class="upload-model" style="display: none;">
+        <div class="inner-upload">
+            <a class="close-btn">
+                <i class="fas fa-times-circle"></i>
+            </a>
+            <form action="" class="upload-form">
+                <div class="input-field">
+                    <label class="label active">
+                        <input type="radio" name="filetype" value="attendance" id="filetype1" checked="true"> Attendance
+                    </label>
+                    <label class="label">
+                        <input type="radio" name="filetype" value="shift" id="filetype2"> Shift excel
+                    </label>
+                </div>
+                <div class="drag-drop-area" id="drop-area">
+                    <input type="file" name="file" id="file" hidden />
+                    <p>Drag and drop a file here or click to select a file</p>
+                </div>
+                <div id="file-actions" style="display: none;">
+                    <button type="button" id="cancel-btn">Cancel</button>
+                    <button type="submit" id="upload-btn">Upload</button>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+
     <main class="main active">
         <header class="details-bar">
             <div class="user-details">
@@ -208,15 +235,12 @@
             </div>
         </header>
         
-        <menu class="table-menu" style="display: none;">
+        <menu class="table-menu" style="display: flex;">
             <ul class="btn-container">
                 <li class="tag-btn click active">Today Attendance</li>
-                <li class="tag-btn click">Yesterday Attendance</li>
                 <li class="tag-btn click">This Month Attendance</li>
-                <li class="tag-btn click">Last Month Attendance</li>
                 <select name="shift" id="shift" class="tag-btn">
                     <option value="">Select Shift Name</option>
-                    <option value="">ALL ~ Shift</option>
                     <option value="A">A ~ Shift</option>
                     <option value="B">B ~ Shift</option>
                     <option value="C">C ~ Shift</option>

@@ -7,7 +7,10 @@ let currentYear = date.getFullYear();
 let displayDate = (currentDate+"/"+currentMonth+"/"+currentYear);
 
 document.querySelector(".date").innerHTML = `Date : ${displayDate}`;
-document.querySelector(".time").innerHTML = `Time : ${displayDate}`;
+
+setInterval(() => {
+    document.querySelector(".time").innerHTML = `Time : ${new Date().toLocaleTimeString()}`;
+}, 1000);
 
 
 // const notification_icon = document.querySelector(".notification-icon");
@@ -116,3 +119,83 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var dropArea = document.getElementById('drop-area');
+    var fileInput = document.getElementById('file');
+    var actions = document.getElementById('file-actions');
+    var cancelBtn = document.getElementById('cancel-btn');
+    var fileNameDisplay = document.createElement('p');
+    fileNameDisplay.id = 'file-name-display';
+    dropArea.appendChild(fileNameDisplay); // Add the file name display to the drop area
+
+    // Function to update UI with file name
+    function updateFileNameDisplay(file) {
+        fileNameDisplay.innerHTML = file ? `Selected file: <strong>${file.name}</strong>` : '';
+    }
+
+    // Open file selector when clicked on the drop area
+    dropArea.addEventListener('click', function() {
+        fileInput.click();
+    });
+
+    fileInput.addEventListener('change', function() {
+        if (this.files && this.files.length > 0) {
+            updateFileNameDisplay(this.files[0]);
+            actions.style.display = 'block';
+        }
+    });
+
+    dropArea.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        dropArea.classList.add('drag-over');
+    });
+
+    dropArea.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        dropArea.classList.remove('drag-over');
+    });
+
+    dropArea.addEventListener('drop', function(e) {
+        e.preventDefault();
+        dropArea.classList.remove('drag-over');
+        fileInput.files = e.dataTransfer.files;
+        if (fileInput.files.length > 0) {
+            updateFileNameDisplay(fileInput.files[0]);
+            actions.style.display = 'block';
+        }
+    });
+
+    cancelBtn.addEventListener('click', function() {
+        fileInput.value = ''; // Clear the file input
+        updateFileNameDisplay(null);
+        actions.style.display = 'none';
+    });
+});
+
+
+let all_radios = document.querySelectorAll('input[type="radio"]');
+
+all_radios.forEach(radio => {
+    radio.addEventListener("click",()=>{
+        all_radios.forEach(rad =>{
+            rad.parentElement.classList.remove("active");
+        });
+        if (radio.checked == true) {
+            radio.parentElement.classList.add('active');
+        }
+    })
+});
+
+const upload_model = document.querySelector(".upload-model");
+const uploadClose = document.querySelector(".close-btn");
+
+uploadClose.addEventListener("click",()=>{
+    upload_model.style.display = "none";
+});
+
+const upload_button = document.querySelector(".upload-option");
+
+upload_button.addEventListener("click", ()=>{
+    upload_model.style.display = "flex";
+})
