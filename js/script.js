@@ -140,10 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     fileInput.addEventListener('change', function() {
-        if (this.files && this.files.length > 0) {
-            updateFileNameDisplay(this.files[0]);
-            actions.style.display = 'block';
-        }
+        handleFileSelection(this.files);
     });
 
     dropArea.addEventListener('dragover', function(e) {
@@ -159,19 +156,37 @@ document.addEventListener("DOMContentLoaded", function() {
     dropArea.addEventListener('drop', function(e) {
         e.preventDefault();
         dropArea.classList.remove('drag-over');
-        fileInput.files = e.dataTransfer.files;
-        if (fileInput.files.length > 0) {
-            updateFileNameDisplay(fileInput.files[0]);
-            actions.style.display = 'block';
-        }
+        handleFileSelection(e.dataTransfer.files);
     });
 
     cancelBtn.addEventListener('click', function() {
+        clearFileInput();
+    });
+
+    function handleFileSelection(files) {
+        if (files && files.length > 0) {
+            var allowedFileTypes = ['xlsx', 'xls', 'csv'];
+            var file = files[0];
+            var fileExtension = file.name.split('.').pop().toLowerCase();
+
+            if (allowedFileTypes.indexOf(fileExtension) === -1) {
+                alert('Invalid file type. Please select a valid file.');
+                clearFileInput();
+                return;
+            }
+
+            updateFileNameDisplay(file);
+            actions.style.display = 'block';
+        }
+    }
+
+    function clearFileInput() {
         fileInput.value = ''; // Clear the file input
         updateFileNameDisplay(null);
         actions.style.display = 'none';
-    });
+    }
 });
+
 
 
 let all_radios = document.querySelectorAll('input[type="radio"]');
