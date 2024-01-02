@@ -85,42 +85,42 @@ function calculateExtraTime(totalDuration) {
 // ... [previous code]
 
 // Loop through each employee data
-employeeData.forEach(employee => {
-    const lateByMinutes = calculateLateBy(employee.shiftintime, employee.empintime);
-    const earlyGoMinutes = calculateEarlyGo(employee.shiftouttime, employee.empouttime);
-    const totalDuration = calculateTotalDuration(employee.empintime, employee.empouttime);
-    const extraTime = calculateExtraTime(totalDuration);
+// employeeData.forEach(employee => {
+//     const lateByMinutes = calculateLateBy(employee.shiftintime, employee.empintime);
+//     const earlyGoMinutes = calculateEarlyGo(employee.shiftouttime, employee.empouttime);
+//     const totalDuration = calculateTotalDuration(employee.empintime, employee.empouttime);
+//     const extraTime = calculateExtraTime(totalDuration);
 
-    let status ;
+//     let status ;
 
-    if (employee.status == "P") {
-        status = `<i class="fas fa-check-circle"></i>`;
-    }else if (employee.status == "A") {
-        status = `<i class="fas fa-times-circle"></i>`;
-    }else{
-        status = `~`;
-    }
+//     if (employee.status == "P") {
+//         status = `<i class="fas fa-check-circle"></i>`;
+//     }else if (employee.status == "A") {
+//         status = `<i class="fas fa-times-circle"></i>`;
+//     }else{
+//         status = `~`;
+//     }
 
-    let tr = document.createElement("tr");
+//     let tr = document.createElement("tr");
 
-    tr.innerHTML = (`
-        <td class="id">${employee.empid}</td>
-        <td class="name">${employee.empname}</td>
-        <td>${employee.date}</td>
-        <td>${employee.shiftintime}</td>
-        <td>${employee.shiftouttime}</td>
-        <td>${employee.empintime}</td>
-        <td>${employee.empouttime}</td>
-        <td>${formatTime(parseInt(lateByMinutes/60), lateByMinutes % 60)}</td>
-        <td>${formatTime(parseInt(earlyGoMinutes/60) , earlyGoMinutes % 60)}</td>
-        <td>${totalDuration}</td>
-        <td class="extra">${extraTime}</td>
-        <td>${status}</td>
-    `);
+//     tr.innerHTML = (`
+//         <td class="id">${employee.empid}</td>
+//         <td class="name">${employee.empname}</td>
+//         <td>${employee.date}</td>
+//         <td>${employee.shiftintime}</td>
+//         <td>${employee.shiftouttime}</td>
+//         <td>${employee.empintime}</td>
+//         <td>${employee.empouttime}</td>
+//         <td>${formatTime(parseInt(lateByMinutes/60), lateByMinutes % 60)}</td>
+//         <td>${formatTime(parseInt(earlyGoMinutes/60) , earlyGoMinutes % 60)}</td>
+//         <td>${totalDuration}</td>
+//         <td class="extra">${extraTime}</td>
+//         <td>${status}</td>
+//     `);
 
-    document.querySelector(".today-attendance-table .tableBody").appendChild(tr);
+//     document.querySelector(".today-attendance-table .tableBody").appendChild(tr);
 
-});
+// });
 
 
 let extraTd = todayAttendanceTable.querySelectorAll(".extra");
@@ -156,4 +156,4 @@ idsearch.addEventListener("input", ()=> {
         }
     });
 
-})
+});

@@ -100,6 +100,12 @@
                 </span>
                 <p class="menu-name">Upload</p>
             </li>
+            <li class="menu-option delete-option">
+                <span class="icon">
+                    <i class="fas fa-user-times"></i>
+                </span>
+                <p class="menu-name">Delete Employee</p>
+            </li>
         </ul>
     </aside>
 
@@ -258,7 +264,7 @@
             <div class="inner-frame">
                 <div class="frame-header">
                     <div class="frame-details">
-                        <p class="shift name"><span class="tag">A</span> ~ shift</p>
+                        <p class="shift currentShift name"><span class="tag">A</span> ~ shift</p>
                         <p class="frame-name">Today Attendance</p>
                     </div>
                     <div class="frame-options">
@@ -286,7 +292,125 @@
                             </tr>
                         </thead>
                         <tbody class="tableBody">
-
+                            <tr data-shift="a">
+                                <td class="id">#0001</td>
+                                <td class="name">John Doe</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:05 AM</td>
+                                <td>05:10 PM</td>
+                                <td>0 hrs - 5 mins</td>
+                                <td>0 hrs - 0 mins</td>
+                                <td>8 hrs - 5 mins</td>
+                                <td class="extra" style="color: green;">+0 hrs - 5 mins</td>
+                                <td><i class="fas fa-times-circle"></i></td>
+                            </tr><tr data-shift="B">
+                                <td class="id">#0002</td>
+                                <td class="name">Jane Doe</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:02 AM</td>
+                                <td>04:08 PM</td>
+                                <td>0 hrs - 2 mins</td>
+                                <td>0 hrs - 52 mins</td>
+                                <td>7 hrs - 6 mins</td>
+                                <td class="extra" style="color: red;">-0 hrs - 54 mins</td>
+                                <td><i class="fas fa-check-circle"></i></td>
+                            </tr><tr data-shift="c">
+                                <td class="id">#0003</td>
+                                <td class="name">Alice Smith</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:07 AM</td>
+                                <td>04:55 PM</td>
+                                <td>0 hrs - 7 mins</td>
+                                <td>0 hrs - 5 mins</td>
+                                <td>7 hrs - 48 mins</td>
+                                <td class="extra" style="color: red;">-0 hrs - 12 mins</td>
+                                <td><i class="fas fa-times-circle"></i></td>
+                            </tr>
+                            <tr data-shift="a">
+                                <td class="id">#0004</td>
+                                <td class="name">John Doe</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:05 AM</td>
+                                <td>05:10 PM</td>
+                                <td>0 hrs - 5 mins</td>
+                                <td>0 hrs - 0 mins</td>
+                                <td>8 hrs - 5 mins</td>
+                                <td class="extra" style="color: green;">+0 hrs - 5 mins</td>
+                                <td><i class="fas fa-times-circle"></i></td>
+                            </tr><tr data-shift="B">
+                                <td class="id">#0005</td>
+                                <td class="name">Jane Doe</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:02 AM</td>
+                                <td>04:08 PM</td>
+                                <td>0 hrs - 2 mins</td>
+                                <td>0 hrs - 52 mins</td>
+                                <td>7 hrs - 6 mins</td>
+                                <td class="extra" style="color: red;">-0 hrs - 54 mins</td>
+                                <td><i class="fas fa-check-circle"></i></td>
+                            </tr><tr data-shift="c">
+                                <td class="id">#0006</td>
+                                <td class="name">Alice Smith</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:07 AM</td>
+                                <td>04:55 PM</td>
+                                <td>0 hrs - 7 mins</td>
+                                <td>0 hrs - 5 mins</td>
+                                <td>7 hrs - 48 mins</td>
+                                <td class="extra" style="color: red;">-0 hrs - 12 mins</td>
+                                <td><i class="fas fa-times-circle"></i></td>
+                            </tr><tr data-shift="a">
+                                <td class="id">#0007</td>
+                                <td class="name">John Doe</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:05 AM</td>
+                                <td>05:10 PM</td>
+                                <td>0 hrs - 5 mins</td>
+                                <td>0 hrs - 0 mins</td>
+                                <td>8 hrs - 5 mins</td>
+                                <td class="extra" style="color: green;">+0 hrs - 5 mins</td>
+                                <td><i class="fas fa-times-circle"></i></td>
+                            </tr><tr data-shift="B">
+                                <td class="id">#0008</td>
+                                <td class="name">Jane Doe</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:02 AM</td>
+                                <td>04:08 PM</td>
+                                <td>0 hrs - 2 mins</td>
+                                <td>0 hrs - 52 mins</td>
+                                <td>7 hrs - 6 mins</td>
+                                <td class="extra" style="color: red;">-0 hrs - 54 mins</td>
+                                <td><i class="fas fa-check-circle"></i></td>
+                            </tr><tr data-shift="c">
+                                <td class="id">#0009</td>
+                                <td class="name">Alice Smith</td>
+                                <td>13-12-2023</td>
+                                <td>09:00 AM</td>
+                                <td>05:00 PM</td>
+                                <td>09:07 AM</td>
+                                <td>04:55 PM</td>
+                                <td>0 hrs - 7 mins</td>
+                                <td>0 hrs - 5 mins</td>
+                                <td>7 hrs - 48 mins</td>
+                                <td class="extra" style="color: red;">-0 hrs - 12 mins</td>
+                                <td><i class="fas fa-times-circle"></i></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -307,7 +431,7 @@
                 <div class="frame-header">
                     <div class="frame-details">
                         <p class="frame-name">Month Attendance</p>
-                        <p class="shift name"><span class="tag">A</span> ~ shift</p>
+                        <p class="shift currentShift name"><span class="tag">A</span> ~ shift</p>
                     </div>
                     <div class="frame-search">
                         <input type="text" name="idsearch" id="idsearch" placeholder="Search By ID">
@@ -522,5 +646,6 @@
         <!-- Include xlsx library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/filter.js"></script>
 </body>
 </html>
