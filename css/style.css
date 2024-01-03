@@ -820,3 +820,38 @@ option{
     color: #555;
     margin-bottom: 10px;
 }
+
+.edit-requests td{
+    padding: 5px ;
+}
+
+.request-btns{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.action-btns{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.confirm-request{
+    background: #008000;
+    color: #ffffff;
+}
+
+.cancel-request{
+    background: #ff0000;
+    color: #ffffff;
+}
+
+.edit-model .inner-delete-model{
+    overflow-x: scroll;
+}
