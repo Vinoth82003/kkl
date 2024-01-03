@@ -67,7 +67,7 @@ add.addEventListener("click", ()=> {
     li.innerHTML = `
         <li class="notification-box">
                 <div class="profile">
-                    <img src="icon/default.jpeg" alt="default user">
+                    <img src="asset/images/default.png" alt="default user">
                 </div>
                 <div class="notification-details">
                     <div class="notification-user-name">
