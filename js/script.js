@@ -208,14 +208,22 @@ all_radios.forEach(radio => {
 });
 
 const upload_model = document.querySelector(".upload-model");
-const uploadClose = document.querySelector(".close-btn");
+const uploadClose = document.querySelectorAll(".close-btn");
 
-uploadClose.addEventListener("click",()=>{
-    upload_model.style.display = "none";
+uploadClose.forEach(element => {
+    element.addEventListener("click",()=>{
+        element.parentElement.parentElement.style.display = "none";
+    });
 });
 
 const upload_button = document.querySelector(".upload-option");
 
 upload_button.addEventListener("click", ()=>{
     upload_model.style.display = "flex";
+});
+
+const delete_option = document.querySelector(".delete-option");
+
+delete_option.addEventListener("click",()=>{
+    document.querySelector(".delete-model").style.display = "flex";
 })
