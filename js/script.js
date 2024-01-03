@@ -226,4 +226,10 @@ const delete_option = document.querySelector(".delete-option");
 
 delete_option.addEventListener("click",()=>{
     document.querySelector(".delete-model").style.display = "flex";
-})
+});
+
+const edit_option = document.querySelector(".edit-option");
+
+edit_option.addEventListener("click",()=>{
+    document.querySelector(".edit-model").style.display = "flex";
+});

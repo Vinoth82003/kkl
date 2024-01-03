@@ -106,6 +106,12 @@
                 </span>
                 <p class="menu-name">Delete Employee</p>
             </li>
+            <li class="menu-option edit-option">
+                <span class="icon">
+                    <i class="fas fa-user-edit"></i>
+                </span>
+                <p class="menu-name">Edit Employee</p>
+            </li>
         </ul>
     </aside>
 
@@ -320,6 +326,41 @@
         </div>
     </section>
 
+    <section class="edit-model" style="display: flex;">
+        <div class="inner-delete-model">
+            <a class="close-btn">
+                <i class="fas fa-times-circle"></i>
+            </a>
+           <div class="display-container">
+                <div class="single-form" style="display: flex;">
+                    <p class="title">Edit Employee</p>
+                    <div class="input-field">
+                        <label>Enter Emp Id</label>
+                        <input type="text" name="empid" id="empid">
+                    </div>
+                    <div class="input-field">
+                        <label>Select Option</label>
+                        <select name="editType" id="editType">
+                            <option value="">Select type </option>
+                            <option value="name">Employee Name</option>
+                            <option value="mobilenumber">Mobile Number</option>
+                            <option value="address">Address</option>
+                        </select>
+                    </div>
+                    <div class="button-container">
+                        <button class="delete-btns fetch"><i class="fas fa-download"></i>Fetch</button>
+                    </div>
+                    <div class="after-fetch">
+                        <div class="input-field">
+                            <input type="text" id="editInput" class="editInput" />
+                        </div>
+                        <button class="delete-btns change"><i class="fas fa-check"></i>Confirm</button>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </section>
+
     <main class="main active">
         <header class="details-bar">
             <div class="user-details">
@@ -335,7 +376,7 @@
             <menu class="table-menu" style="display: flex;">
                 <ul class="btn-container">
                     <li class="tag-btn click active" index="0">Today Attendance</li>
-                    <!-- <li class="tag-btn click active" index="3">Yesterday Attendance</li> -->
+                    <li class="tag-btn click active" index="3">Yesterday Attendance</li>
                     <li class="tag-btn click" index="1">This Month Attendance</li>
                     <!-- <li class="tag-btn click" index="2">Last Month Attendance</li> -->
                     <select name="shift" id="shift" class="tag-btn">
@@ -506,7 +547,7 @@
                     </div>
                 </div>
             </section>
-            <section class="frame today-attendance" style="display: flex;" index="3">
+            <section class="frame today-attendance" style="display: none;" index="3">
                 <div class="inner-frame">
                     <div class="frame-header">
                         <div class="frame-details">
