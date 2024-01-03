@@ -233,6 +233,79 @@
         </div>
     </section>
 
+    <section class="delete-model" style="display: none;">
+        <div class="inner-delete-model">
+            <div class="header">
+                <div class="input-field">
+                    <label class="label active">
+                        <input type="radio" name="deleteType" id="deleteType" value="single_employee" checked="true"/>
+                        Single Employee
+                    </label>
+                </div>
+                <div class="input-field">
+                    <label class="label">
+                        <input type="radio" name="deleteType" id="deleteType" value="multiple_employees"/>
+                        Mlutiple Employees
+                    </label>
+                </div>
+            </div>
+            <div class="table-container">
+                <div class="info-header">
+                    <P class="counter">
+                        <span class="tag">2</span>
+                        <span>Selected</span>
+                    </P>
+                    <div class="button-container">
+                        <button class="delete-btns cancel"><i class="fas fa-times"></i>cancel</button>
+                        <button class="delete-btns confirm"><i class="far fa-trash-alt"></i>delete</button>
+                    </div>
+                </div>
+                <table class="delete-table" style="width: -webkit-fill-available;">
+                    <thead>
+                        <th>Select</th>
+                        <th>Emp Id</th>
+                        <th>Emp Name</th>
+                    </thead>
+                    <tbody class="delete-table-body">
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="select" id="select" value="#0001">
+                            </td>
+                            <td>
+                                #0001
+                            </td>
+                            <td>
+                                john doe
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="select" id="select" value="#0002">
+                            </td>
+                            <td>
+                                #0002
+                            </td>
+                            <td>
+                                lorem ispum
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="select" id="select" value="#0003">
+                            </td>
+                            <td>
+                                #0003
+                            </td>
+                            <td>
+                                William jackson
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <main class="main active">
         <header class="details-bar">
             <div class="user-details">

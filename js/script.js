@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var blob = new Blob([wbArrayBuffer], { type: 'application/octet-stream' });
 
             // Trigger download using FileSaver.js
-            let fileName = parent.querySelector(".frame-details").textContent;
+            let fileName = parent.querySelector(".frame-details").textContent.trim();
             saveAs(blob, `${fileName}.xlsx`);
         });
     });
@@ -154,10 +154,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     dropArea.addEventListener('drop', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent the default action (open as link)
         dropArea.classList.remove('drag-over');
         handleFileSelection(e.dataTransfer.files);
     });
+    
 
     cancelBtn.addEventListener('click', function() {
         clearFileInput();
@@ -168,17 +169,21 @@ document.addEventListener("DOMContentLoaded", function() {
             var allowedFileTypes = ['xlsx', 'xls', 'csv'];
             var file = files[0];
             var fileExtension = file.name.split('.').pop().toLowerCase();
-
+    
             if (allowedFileTypes.indexOf(fileExtension) === -1) {
                 alert('Invalid file type. Please select a valid file.');
                 clearFileInput();
                 return;
             }
-
+    
+            // Manually set the files for the file input
+            fileInput.files = files;
+    
             updateFileNameDisplay(file);
             actions.style.display = 'block';
         }
     }
+    
 
     function clearFileInput() {
         fileInput.value = ''; // Clear the file input

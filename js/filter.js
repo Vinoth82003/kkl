@@ -44,4 +44,12 @@ function getCurrentShift() {
 }
 
 const currentShift = getCurrentShift();
-filter(currentShift)
+filter(currentShift);
+
+const deleteRows = document.querySelectorAll(".delete-table .delete-table-body tr");
+
+deleteRows.forEach(row => {
+    row.addEventListener("click",()=>{
+        
+    })
+});
