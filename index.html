@@ -334,8 +334,10 @@
         <div class="attendance-container action" style="display: block;" index="0">
             <menu class="table-menu" style="display: flex;">
                 <ul class="btn-container">
-                    <li class="tag-btn  click active">Today Attendance</li>
-                    <li class="tag-btn  click">This Month Attendance</li>
+                    <li class="tag-btn click active" index="0">Today Attendance</li>
+                    <!-- <li class="tag-btn click active" index="3">Yesterday Attendance</li> -->
+                    <li class="tag-btn click" index="1">This Month Attendance</li>
+                    <!-- <li class="tag-btn click" index="2">Last Month Attendance</li> -->
                     <select name="shift" id="shift" class="tag-btn">
                         <option value="">Select Shift Name</option>
                         <option value="A">A ~ Shift</option>
@@ -348,7 +350,163 @@
             <link rel="stylesheet" href="css/attendance.css">
             <!-- <iframe src="" frameborder="0" class="frame"></iframe> -->
             
-            <section class="frame today-attendance" style="display: flex;">
+            <section class="frame today-attendance" style="display: flex;" index="0">
+                <div class="inner-frame">
+                    <div class="frame-header">
+                        <div class="frame-details">
+                            <p class="shift currentShift name"><span class="tag">A</span> ~ shift</p>
+                            <p class="frame-name">Today Attendance</p>
+                        </div>
+                        <div class="frame-options">
+                            <button type="button" class="download">
+                                <i class="fas fa-file-excel"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="frame-body">
+                        <table class="today-attendance-table">
+                            <thead>
+                                <tr class="tablehead">
+                                    <th>EmpId</th>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Shift Intime</th>
+                                    <th>Shift Outtime</th>
+                                    <th>Intime</th>
+                                    <th>Outtime</th>
+                                    <th>Late By</th>
+                                    <th>Early Go</th>
+                                    <th>Total Duration</th>
+                                    <th>Extra Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tableBody">
+                                <tr data-shift="a">
+                                    <td class="id">#0001</td>
+                                    <td class="name">John Doe</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:05 AM</td>
+                                    <td>05:10 PM</td>
+                                    <td>0 hrs - 5 mins</td>
+                                    <td>0 hrs - 0 mins</td>
+                                    <td>8 hrs - 5 mins</td>
+                                    <td class="extra" style="color: green;">+0 hrs - 5 mins</td>
+                                    <td><i class="fas fa-times-circle"></i></td>
+                                </tr><tr data-shift="B">
+                                    <td class="id">#0002</td>
+                                    <td class="name">Jane Doe</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:02 AM</td>
+                                    <td>04:08 PM</td>
+                                    <td>0 hrs - 2 mins</td>
+                                    <td>0 hrs - 52 mins</td>
+                                    <td>7 hrs - 6 mins</td>
+                                    <td class="extra" style="color: red;">-0 hrs - 54 mins</td>
+                                    <td><i class="fas fa-check-circle"></i></td>
+                                </tr><tr data-shift="c">
+                                    <td class="id">#0003</td>
+                                    <td class="name">Alice Smith</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:07 AM</td>
+                                    <td>04:55 PM</td>
+                                    <td>0 hrs - 7 mins</td>
+                                    <td>0 hrs - 5 mins</td>
+                                    <td>7 hrs - 48 mins</td>
+                                    <td class="extra" style="color: red;">-0 hrs - 12 mins</td>
+                                    <td><i class="fas fa-times-circle"></i></td>
+                                </tr>
+                                <tr data-shift="a">
+                                    <td class="id">#0004</td>
+                                    <td class="name">John Doe</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:05 AM</td>
+                                    <td>05:10 PM</td>
+                                    <td>0 hrs - 5 mins</td>
+                                    <td>0 hrs - 0 mins</td>
+                                    <td>8 hrs - 5 mins</td>
+                                    <td class="extra" style="color: green;">+0 hrs - 5 mins</td>
+                                    <td><i class="fas fa-times-circle"></i></td>
+                                </tr><tr data-shift="B">
+                                    <td class="id">#0005</td>
+                                    <td class="name">Jane Doe</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:02 AM</td>
+                                    <td>04:08 PM</td>
+                                    <td>0 hrs - 2 mins</td>
+                                    <td>0 hrs - 52 mins</td>
+                                    <td>7 hrs - 6 mins</td>
+                                    <td class="extra" style="color: red;">-0 hrs - 54 mins</td>
+                                    <td><i class="fas fa-check-circle"></i></td>
+                                </tr><tr data-shift="c">
+                                    <td class="id">#0006</td>
+                                    <td class="name">Alice Smith</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:07 AM</td>
+                                    <td>04:55 PM</td>
+                                    <td>0 hrs - 7 mins</td>
+                                    <td>0 hrs - 5 mins</td>
+                                    <td>7 hrs - 48 mins</td>
+                                    <td class="extra" style="color: red;">-0 hrs - 12 mins</td>
+                                    <td><i class="fas fa-times-circle"></i></td>
+                                </tr><tr data-shift="a">
+                                    <td class="id">#0007</td>
+                                    <td class="name">John Doe</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:05 AM</td>
+                                    <td>05:10 PM</td>
+                                    <td>0 hrs - 5 mins</td>
+                                    <td>0 hrs - 0 mins</td>
+                                    <td>8 hrs - 5 mins</td>
+                                    <td class="extra" style="color: green;">+0 hrs - 5 mins</td>
+                                    <td><i class="fas fa-times-circle"></i></td>
+                                </tr><tr data-shift="B">
+                                    <td class="id">#0008</td>
+                                    <td class="name">Jane Doe</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:02 AM</td>
+                                    <td>04:08 PM</td>
+                                    <td>0 hrs - 2 mins</td>
+                                    <td>0 hrs - 52 mins</td>
+                                    <td>7 hrs - 6 mins</td>
+                                    <td class="extra" style="color: red;">-0 hrs - 54 mins</td>
+                                    <td><i class="fas fa-check-circle"></i></td>
+                                </tr><tr data-shift="c">
+                                    <td class="id">#0009</td>
+                                    <td class="name">Alice Smith</td>
+                                    <td>13-12-2023</td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>09:07 AM</td>
+                                    <td>04:55 PM</td>
+                                    <td>0 hrs - 7 mins</td>
+                                    <td>0 hrs - 5 mins</td>
+                                    <td>7 hrs - 48 mins</td>
+                                    <td class="extra" style="color: red;">-0 hrs - 12 mins</td>
+                                    <td><i class="fas fa-times-circle"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="frame today-attendance" style="display: flex;" index="3">
                 <div class="inner-frame">
                     <div class="frame-header">
                         <div class="frame-details">
@@ -510,7 +668,39 @@
     <!-- Include FileSaver.js -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     
-            <section class="frame month-attendance action" style="display: none;">
+            <section class="frame month-attendance action" style="display: none;" index="1">
+                <div class="inner-frame">
+                    <div class="frame-header">
+                        <div class="frame-details">
+                            <p class="frame-name">Month Attendance</p>
+                            <p class="shift currentShift name"><span class="tag">A</span> ~ shift</p>
+                        </div>
+                        <div class="frame-search">
+                            <input type="text" name="idsearch" id="idsearch" placeholder="Search By ID">
+                            <input type="text" name="namesearch" id="namesearch" placeholder="Search By Name">
+                        </div>
+                        <div class="frame-options">
+                            <button type="button" class="download">
+                                <i class="fas fa-file-excel"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="frame-body">
+                        <table class="attendance-table">
+                            <thead>
+                                <tr class="thead">
+                                    <th>EmpId</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tableBody filter">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="frame month-attendance action" style="display: none;" index="2">
                 <div class="inner-frame">
                     <div class="frame-header">
                         <div class="frame-details">

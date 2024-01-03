@@ -21,4 +21,23 @@ all_btns.forEach(btn => {
     })
 });
 
-const today_btn = document.querySelectorAll(".today-btn")
+const tag_btns = document.querySelectorAll(".click");
+const all_frame = document.querySelectorAll(".frame");
+
+tag_btns.forEach(btn => {
+    btn.addEventListener("click", ()=>{
+        let index = btn.getAttribute("index");
+        all_frame.forEach(page => {
+            let pageIndex = page.getAttribute("index");
+            if (index == pageIndex) {
+                page.style.display = "block";
+            }else{
+                page.style.display = "none";
+            }
+        });
+        tag_btns.forEach(buttons => {
+            buttons.classList.remove("active");
+        });
+        btn.classList.add("active");
+    })
+});
