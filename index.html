@@ -239,7 +239,8 @@
         </div>
     </section>
 
-    <section class="delete-model" style="display: none;">
+    <!-- section to copy -->
+    <section class="delete-model" style="display: flex;">
         <div class="inner-delete-model">
             <a class="close-btn">
                 <i class="fas fa-times-circle"></i>
@@ -259,7 +260,7 @@
                 </div>
             </div>
            <div class="display-container">
-                <div class="single-form" style="display: flex;">
+                <div class="single-form" style="display: none;">
                     <div class="input-field">
                         <label>Enter Emp Id</label>
                         <input type="text" name="empid" id="empid">
@@ -268,7 +269,7 @@
                         <button class="delete-btns submit"><i class="far fa-trash-alt"></i>delete</button>
                     </div>
                 </div>
-                <div class="table-container" style="display: none;">
+                <div class="table-container" style="display: block;">
                     <div class="info-header">
                         <P class="counter">
                             <span class="tag">0</span>
@@ -279,53 +280,220 @@
                             <button class="delete-btns confirm"><i class="far fa-trash-alt"></i>delete</button>
                         </div>
                     </div>
-                    <table class="delete-table" style="width: -webkit-fill-available;">
-                        <thead>
-                            <th>Select</th>
-                            <th>Emp Id</th>
-                            <th>Emp Name</th>
-                        </thead>
-                        <tbody class="delete-table-body">
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="select" id="select" value="#0001">
-                                </td>
-                                <td>
-                                    #0001
-                                </td>
-                                <td>
-                                    john doe
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="select" id="select" value="#0002">
-                                </td>
-                                <td>
-                                    #0002
-                                </td>
-                                <td>
-                                    lorem ispum
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="select" id="select" value="#0003">
-                                </td>
-                                <td>
-                                    #0003
-                                </td>
-                                <td>
-                                    William jackson
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="info-body">
+                        <table class="delete-table" style="width: -webkit-fill-available;">
+                            <thead>
+                                <th>Select</th>
+                                <th>Emp Id</th>
+                                <th>Emp Name</th>
+                            </thead>
+                            <tbody class="delete-table-body">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0001">
+                                    </td>
+                                    <td>
+                                        #0001
+                                    </td>
+                                    <td>
+                                        john doe
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0002">
+                                    </td>
+                                    <td>
+                                        #0002
+                                    </td>
+                                    <td>
+                                        lorem ispum
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0003">
+                                    </td>
+                                    <td>
+                                        #0003
+                                    </td>
+                                    <td>
+                                        William jackson
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0001">
+                                    </td>
+                                    <td>
+                                        #0001
+                                    </td>
+                                    <td>
+                                        john doe
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0002">
+                                    </td>
+                                    <td>
+                                        #0002
+                                    </td>
+                                    <td>
+                                        lorem ispum
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0003">
+                                    </td>
+                                    <td>
+                                        #0003
+                                    </td>
+                                    <td>
+                                        William jackson
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0001">
+                                    </td>
+                                    <td>
+                                        #0001
+                                    </td>
+                                    <td>
+                                        john doe
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0002">
+                                    </td>
+                                    <td>
+                                        #0002
+                                    </td>
+                                    <td>
+                                        lorem ispum
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0003">
+                                    </td>
+                                    <td>
+                                        #0003
+                                    </td>
+                                    <td>
+                                        William jackson
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0001">
+                                    </td>
+                                    <td>
+                                        #0001
+                                    </td>
+                                    <td>
+                                        john doe
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0002">
+                                    </td>
+                                    <td>
+                                        #0002
+                                    </td>
+                                    <td>
+                                        lorem ispum
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0003">
+                                    </td>
+                                    <td>
+                                        #0003
+                                    </td>
+                                    <td>
+                                        William jackson
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0001">
+                                    </td>
+                                    <td>
+                                        #0001
+                                    </td>
+                                    <td>
+                                        john doe
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0002">
+                                    </td>
+                                    <td>
+                                        #0002
+                                    </td>
+                                    <td>
+                                        lorem ispum
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0003">
+                                    </td>
+                                    <td>
+                                        #0003
+                                    </td>
+                                    <td>
+                                        William jackson
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0001">
+                                    </td>
+                                    <td>
+                                        #0001
+                                    </td>
+                                    <td>
+                                        john doe
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0002">
+                                    </td>
+                                    <td>
+                                        #0002
+                                    </td>
+                                    <td>
+                                        lorem ispum
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="select" id="select" value="#0003">
+                                    </td>
+                                    <td>
+                                        #0003
+                                    </td>
+                                    <td>
+                                        William jackson
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
            </div>
         </div>
     </section>
-
+    <!-- section to cpoy -->
     <section class="edit-model" style="display: none;">
         <div class="inner-delete-model">
             <a class="close-btn">

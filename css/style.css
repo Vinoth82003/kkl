@@ -855,3 +855,11 @@ option{
 .edit-model .inner-delete-model{
     overflow-x: scroll;
 }
+
+/* css to copy */
+
+.info-body{
+    max-height: 460px;
+    overflow-y: scroll;
+    position: relative;
+}
