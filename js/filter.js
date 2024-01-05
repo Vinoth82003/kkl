@@ -46,3 +46,20 @@ function getCurrentShift() {
 
 const currentShift = getCurrentShift();
 filter(currentShift);
+
+all_rows.forEach(row => {
+    let intime = (row.querySelector(".intime"));
+  if (intime && (intime.innerHTML == "-" || intime.innerHTML =="")) {
+    row.classList.add("mis-pinch");
+    intime.innerHTML = `<div class="table-tag">Punch in</div>`;
+  }else{
+    row.classList.remove("mis-pinch");
+  }
+  let outtime = (row.querySelector(".outtime"));
+  if (outtime && (outtime.innerHTML == "-" || outtime.innerHTML =="")) {
+    row.classList.add("mis-pinch");
+    outtime.innerHTML = `<div class="table-tag">Punch out</div>`;
+  }else{
+    row.classList.remove("mis-pinch");
+  }
+});

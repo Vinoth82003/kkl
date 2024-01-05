@@ -167,6 +167,26 @@ tr:nth-child(even){
     color: #ffffff;
 }
 
-.punch-out{
+.mis-pinch{
     background: rgb(252, 166, 166) !important;
+}
+
+.today-attendance-table tbody tr{
+    position: relative;
+}
+
+.today-attendance-table tbody td{
+    position: relative;
+}
+
+.table-tag{
+    /* position: absolute;
+    top: 2px;
+    left: 0px; */
+    background: green;
+    color: #fff;
+    border-radius: 3px;
+    padding: 3px;
+    transform: rotate(0deg);
+    text-align: center;
 }
