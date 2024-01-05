@@ -146,3 +146,27 @@ tr:nth-child(even){
     background: #fff;
     color: #2E4F4F;
 }
+
+/* ccs to be copied */
+
+.btns-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-btn{
+    padding: 7px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.continue{
+    background: green;
+    color: #ffffff;
+}
+
+.punch-out{
+    background: rgb(252, 166, 166) !important;
+}

@@ -235,8 +235,7 @@ edit_option.addEventListener("click",()=>{
 });
 
 
-const currentShift = getCurrentShift();
-filter(currentShift);
+
 
 let empArray = [];
 

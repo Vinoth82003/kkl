@@ -42,3 +42,7 @@ function getCurrentShift() {
         return 'c';
     }
 }
+
+
+const currentShift = getCurrentShift();
+filter(currentShift);
