@@ -49,17 +49,33 @@ filter(currentShift);
 
 all_rows.forEach(row => {
     let intime = (row.querySelector(".intime"));
-  if (intime && (intime.innerHTML == "-" || intime.innerHTML =="")) {
-    row.classList.add("mis-pinch");
-    intime.innerHTML = `<div class="table-tag">Punch in</div>`;
-  }else{
-    row.classList.remove("mis-pinch");
-  }
-  let outtime = (row.querySelector(".outtime"));
-  if (outtime && (outtime.innerHTML == "-" || outtime.innerHTML =="")) {
-    row.classList.add("mis-pinch");
-    outtime.innerHTML = `<div class="table-tag">Punch out</div>`;
-  }else{
-    row.classList.remove("mis-pinch");
-  }
-});
+    let outtime = (row.querySelector(".outtime"));
+    if ((intime && (intime.innerHTML == "-" || intime.innerHTML =="")) || (outtime && (outtime.innerHTML == "-" || outtime.innerHTML ==""))) {
+      row.classList.add("mis-pinch");
+      if (intime.innerHTML =="-") {
+        intime.innerHTML = `<div class="table-tag">Punch in</div>`;
+      }else{
+        outtime.innerHTML = `<div class="table-tag">Punch out</div>`;
+      }
+
+      row.querySelector(".action").innerHTML = (`
+        <div class="btns-container">
+            <button type="button" class="table-btn cancel">Cancel</button>
+            <button type="button" class="table-btn continue">Continue</button>
+        </div>
+      `)
+
+    }else{
+      row.classList.remove("mis-pinch");
+    }
+  
+  });
+
+console.log("filter.js");
+
+setInterval(() => {
+    const currentTime = new Date();
+    const currentHour = currentTime.getHours();
+    const CurrentMins = currentTime.getMinutes();
+    const currentSecs = currentTime.getSeconds();
+}, 1000);
