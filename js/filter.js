@@ -71,11 +71,50 @@ all_rows.forEach(row => {
   
   });
 
-console.log("filter.js");
-
-setInterval(() => {
+  function getCurrentShiftTime() {
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
-    const CurrentMins = currentTime.getMinutes();
-    const currentSecs = currentTime.getSeconds();
-}, 1000);
+    const currentMinute = currentTime.getMinutes();
+
+    // Function to convert 24-hour format to 12-hour format
+    const convertTo12HourFormat = (hour) => {
+        return hour % 12 || 12; // If the hour is 0, it should be 12 in 12-hour format
+    };
+
+    let shift = '';
+    let minutesBeforeChange = 0;
+
+    if (currentHour >= 6 && currentHour < 14) {
+        shift = 'a';
+        if (currentHour === 14) {
+            minutesBeforeChange = 60 - currentMinute;
+        } else {
+            minutesBeforeChange = currentHour < 14 ? (14 - currentHour - 1) * 60 + (60 - currentMinute) : 0;
+        }
+    } else if (currentHour >= 14 && currentHour < 22) {
+        shift = 'b';
+        if (currentHour === 22) {
+            minutesBeforeChange = 60 - currentMinute;
+        } else {
+            minutesBeforeChange = currentHour < 22 ? (22 - currentHour - 1) * 60 + (60 - currentMinute) : 0;
+        }
+    } else {
+        shift = 'c';
+        if (currentHour === 6) {
+            minutesBeforeChange = 60 - currentMinute;
+        } else {
+            minutesBeforeChange = currentHour < 6 ? (6 - currentHour - 1) * 60 + (60 - currentMinute) : 0;
+        }
+    }
+
+    const currentShiftStartTime = convertTo12HourFormat(currentHour) + ':' +
+                                   (currentMinute < 10 ? '0' : '') + currentMinute +
+                                   (currentHour < 12 ? ' AM' : ' PM');
+
+    return { shift, minutesBeforeChange, currentShiftStartTime };
+}
+
+const result = getCurrentShiftTime();
+console.log(`Current Shift: ${result.shift}`);
+console.log(`Current Shift Start Time: ${result.currentShiftStartTime}`);
+console.log(`Shift changed ${result.minutesBeforeChange} minutes ago.`);
