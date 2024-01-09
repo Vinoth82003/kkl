@@ -244,7 +244,6 @@ let empArray = [];
 function showSingleEmp(){
     document.querySelector(".single-form").style.display = "flex";
     document.querySelector(".table-container").style.display = "none";
-    parseData.type = "single employee";
     
     all_checkbox.forEach(checkbox => {
         checkbox.checked = false;
@@ -257,7 +256,6 @@ function showMultiEmp(){
     document.getElementById("empid").value = "";
     document.querySelector(".single-form").style.display = "none";
     document.querySelector(".table-container").style.display = "block";
-    parseData.type = "multiple employee";
 }
 
 function handleInfoHeader(){
