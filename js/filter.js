@@ -71,22 +71,102 @@ all_rows.forEach(row => {
   
   });
 
-  console.log("filter.js");
-
+console.log("filter.js");
 let shiftDetails = [
     {
         shiftName: "A",
-        shiftIntime: "06:00AM",
-        shiftOuttime: "14:00PM"
+        shiftIntime: "06:00",
+        shiftOuttime: "14:00"
     },
     {
         shiftName: "B",
-        shiftIntime: "14:00PM",
-        shiftOuttime: "22:00PM"
+        shiftIntime: "14:00",
+        shiftOuttime: "22:00"
     },
     {
         shiftName: "C",
-        shiftIntime: "22:00PM",
-        shiftOuttime: "06:00AM"
+        shiftIntime: "22:00",
+        shiftOuttime: "06:00"
     }
 ];
+
+let alertSent = false;
+
+function getCurrentShiftInfo(currentTime) {
+    const [currentHours, currentMinutes] = currentTime.split(":").map(Number);
+
+    for (const shift of shiftDetails) {
+        const shiftIntime = shift.shiftIntime.split(":").map(Number);
+        const shiftOuttime = shift.shiftOuttime.split(":").map(Number);
+
+        if (
+            (currentHours > shiftIntime[0] || (currentHours === shiftIntime[0] && currentMinutes >= shiftIntime[1])) &&
+            (currentHours < shiftOuttime[0] || (currentHours === shiftOuttime[0] && currentMinutes < shiftOuttime[1]))
+        ) {
+            const remainingMinutes = (shiftOuttime[0] * 60 + shiftOuttime[1]) - (currentHours * 60 + currentMinutes);
+            const shiftStartTime = `${shiftIntime[0]}:${shiftIntime[1]}`;
+            
+            return {
+                currentShift: shift.shiftName,
+                timeRemaining: remainingMinutes,
+                shiftStartTime: shiftStartTime
+            };
+        }
+    }
+
+    return {
+        currentShift: "No shift found",
+        timeRemaining: 0,
+        shiftStartTime: "N/A"
+    };
+}
+
+function convertMinutesToHoursAndMinutes(minutes) {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return { hours, minutes: remainingMinutes };
+}
+
+function getTimeSinceShiftStarted(shiftStartTime, currentTime) {
+    const [startHours, startMinutes] = shiftStartTime.split(":").map(Number);
+    const [currentHours, currentMinutes] = currentTime.split(":").map(Number);
+
+    const startTotalMinutes = startHours * 60 + startMinutes;
+    const currentTotalMinutes = currentHours * 60 + currentMinutes;
+
+    const elapsedMinutes = currentTotalMinutes - startTotalMinutes;
+    return elapsedMinutes;
+}
+
+function checkElapsedTime() {
+    const currentTime = new Date();
+    const currentHours = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
+    const formattedCurrentTime = `${currentHours}:${currentMinutes}`;
+
+    const shiftInfo = getCurrentShiftInfo(formattedCurrentTime);
+    
+    // Calculate time elapsed since the shift started
+    if (shiftInfo.currentShift !== "No shift found") {
+        const elapsedMinutes = getTimeSinceShiftStarted(shiftInfo.shiftStartTime, formattedCurrentTime);
+        const elapsedHoursAndMinutes = convertMinutesToHoursAndMinutes(elapsedMinutes);
+        console.log(`Time Elapsed Since Shift Started: ${elapsedHoursAndMinutes.hours} hours ${elapsedHoursAndMinutes.minutes} minutes`);
+
+        // Check if 10 minutes have elapsed and alert has not been sent
+        if (elapsedMinutes >= 17 && !alertSent) {
+            console.log("Alert: 10 minutes have elapsed since the shift started!");
+            sendAlert();
+            alertSent = true; // Set flag to true to indicate that the alert has been sent
+        }
+    } else {
+        console.log("No shift found. Unable to calculate elapsed time.");
+    }
+}
+
+setInterval(checkElapsedTime, 1000); // Check every 1000 milliseconds (1 second)
+
+function sendAlert(){
+    if (!alertSent) {
+        console.log("called");
+    }
+}
