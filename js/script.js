@@ -319,3 +319,10 @@ selectDelete.addEventListener("click", ()=>{
         alert("Select Atleast one Employee to delete..")
     }
 });
+
+let allDataElement = document.querySelectorAll(".main-article-wrapper  p");
+let data = [];
+
+allDataElement.forEach(element => {
+    data.push(element.textContent);
+});
