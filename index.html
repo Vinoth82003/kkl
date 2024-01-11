@@ -55,6 +55,12 @@
           </span>
           <p class="menu-name">Attendance</p>
         </li>
+        <li class="menu-option action-menu" index="3">
+          <span class="icon">
+            <i class="fas fa-users"></i>
+          </span>
+          <p class="menu-name">Employees</p>
+        </li>
         <li class="menu-option action-menu" index="1">
           <span class="icon">
             <i class="far fa-clock"></i>
@@ -672,7 +678,7 @@
         </div>
       </header>
 
-      <div class="attendance-container action" style="display: block" index="0">
+      <div class="attendance-container action" style="display: none" index="0">
         <menu class="table-menu" style="display: flex">
           <ul class="btn-container">
             <li class="tag-btn click active" index="0">Today Attendance</li>
@@ -713,6 +719,7 @@
                     <th>EmpId</th>
                     <th>Name</th>
                     <th>Date</th>
+                    <th>Shift</th>
                     <th>Shift Intime</th>
                     <th>Shift Outtime</th>
                     <th>Intime</th>
@@ -730,6 +737,7 @@
                     <td class="id">#0001</td>
                     <td class="name">John Doe</td>
                     <td>13-12-2023</td>
+                    <td>8A</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">09:05 AM</td>
@@ -747,6 +755,7 @@
                     <td class="id">#0002</td>
                     <td class="name">Jane Doe</td>
                     <td>13-12-2023</td>
+                    <td>8B</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">-</td>
@@ -762,6 +771,7 @@
                     <td class="id">#0003</td>
                     <td class="name">Alice Smith</td>
                     <td>13-12-2023</td>
+                    <td>/m</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">09:07 AM</td>
@@ -779,6 +789,7 @@
                     <td class="id">#0004</td>
                     <td class="name">John Doe</td>
                     <td>13-12-2023</td>
+                    <td>8A</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">-</td>
@@ -794,6 +805,7 @@
                     <td class="id">#0005</td>
                     <td class="name">Jane Doe</td>
                     <td>13-12-2023</td>
+                    <td>8B</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">09:02 AM</td>
@@ -805,12 +817,13 @@
                     <td class="status">
                       <i class="fas fa-times-circle"></i> wrong shift
                     </td>
-                    <td>-</td>
+                    <td class="action">-</td>
                   </tr>
                   <tr data-shift="8c">
                     <td class="id">#0006</td>
                     <td class="name">Alice Smith</td>
                     <td>13-12-2023</td>
+                    <td>/m</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">09:07 AM</td>
@@ -826,6 +839,7 @@
                     <td class="id">#0007</td>
                     <td class="name">John Doe</td>
                     <td>13-12-2023</td>
+                    <td>8A</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">09:05 AM</td>
@@ -835,12 +849,13 @@
                     <td>8 hrs - 5 mins</td>
                     <td class="extra" style="color: green">+0 hrs - 5 mins</td>
                     <td class="status"><i class="fas fa-times-circle"></i></td>
-                    <td>-</td>
+                    <td class="action">-</td>
                   </tr>
                   <tr data-shift="8B">
                     <td class="id">#0008</td>
                     <td class="name">Jane Doe</td>
                     <td>13-12-2023</td>
+                    <td>8B</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">09:02 AM</td>
@@ -858,6 +873,7 @@
                     <td class="id">#0009</td>
                     <td class="name">Alice Smith</td>
                     <td>13-12-2023</td>
+                    <td>/m</td>
                     <td>09:00 AM</td>
                     <td>05:00 PM</td>
                     <td class="intime">09:07 AM</td>
@@ -926,7 +942,7 @@
                     <td class="id">#0002</td>
                     <td class="name">Jane Doe</td>
                     <td>13-12-2023</td>
-                    <td>09:00 AM</td>
+                    <td>09:00 BM</td>
                     <td>05:00 PM</td>
                     <td>09:02 AM</td>
                     <td>04:08 PM</td>
@@ -940,7 +956,7 @@
                     <td class="id">#0003</td>
                     <td class="name">Alice Smith</td>
                     <td>13-12-2023</td>
-                    <td>09:00 AM</td>
+                    <td>09:00/mM</td>
                     <td>05:00 PM</td>
                     <td>09:07 AM</td>
                     <td>04:55 PM</td>
@@ -968,7 +984,7 @@
                     <td class="id">#0005</td>
                     <td class="name">Jane Doe</td>
                     <td>13-12-2023</td>
-                    <td>09:00 AM</td>
+                    <td>09:00 BM</td>
                     <td>05:00 PM</td>
                     <td>09:02 AM</td>
                     <td>04:08 PM</td>
@@ -982,7 +998,7 @@
                     <td class="id">#0006</td>
                     <td class="name">Alice Smith</td>
                     <td>13-12-2023</td>
-                    <td>09:00 AM</td>
+                    <td>09:00/mM</td>
                     <td>05:00 PM</td>
                     <td>09:07 AM</td>
                     <td>04:55 PM</td>
@@ -1010,7 +1026,7 @@
                     <td class="id">#0008</td>
                     <td class="name">Jane Doe</td>
                     <td>13-12-2023</td>
-                    <td>09:00 AM</td>
+                    <td>09:00 BM</td>
                     <td>05:00 PM</td>
                     <td>09:02 AM</td>
                     <td>04:08 PM</td>
@@ -1024,7 +1040,7 @@
                     <td class="id">#0009</td>
                     <td class="name">Alice Smith</td>
                     <td>13-12-2023</td>
-                    <td>09:00 AM</td>
+                    <td>09:00/mM</td>
                     <td>05:00 PM</td>
                     <td>09:07 AM</td>
                     <td>04:55 PM</td>
@@ -1039,6 +1055,7 @@
             </div>
           </div>
         </section>
+
         <!-- Include SheetJS library -->
         <script
           type="text/javascript"
@@ -1146,6 +1163,148 @@
 
         <script src="js/attendance.js"></script>
         <script src="attendance.js"></script>
+      </div>
+
+      <div class="employee-container action" index="3" style="display: block">
+        <section class="frame today-attendance">
+          <div class="inner-frame">
+            <div class="frame-header">
+              <div class="frame-details">
+                <p class="frame-name">Employee Details</p>
+              </div>
+              <div class="frame-options">
+                <button type="button" class="download">
+                  <i class="fas fa-file-excel"></i>
+                </button>
+              </div>
+            </div>
+            <div class="frame-body">
+              <table class="employee-table" style="margin-top: 10px">
+                <thead>
+                  <tr class="tablehead">
+                    <th>EmpId</th>
+                    <th>Name</th>
+                    <th>D-O-J</th>
+                    <th>Current Shift</th>
+                    <th>Leave Available</th>
+                    <th>Late Available</th>
+                    <th>Contact No</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody class="tableBody">
+                  <tr>
+                    <td>#001</td>
+                    <td>Employee Name</td>
+                    <td>11/11/1111</td>
+                    <td>8A</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>+91 9182736450</td>
+                    <td>empName@gmail.com</td>
+                    <td>
+                      789 Maple Lane Apt 10B, Building C Suburbia City, District
+                      67890 Territory State Countryland 54321
+                    </td>
+                    <td class="status">Freezed</td>
+                  </tr>
+                  <tr>
+                    <td>#001</td>
+                    <td>Employee Name</td>
+                    <td>11/11/1111</td>
+                    <td>8A</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>+91 9182736450</td>
+                    <td>empName@gmail.com</td>
+                    <td>
+                      789 Maple Lane Apt 10B, Building C Suburbia City, District
+                      67890 Territory State Countryland 54321
+                    </td>
+                    <td class="status">Active</td>
+                  </tr>
+                  <tr>
+                    <td>#001</td>
+                    <td>Employee Name</td>
+                    <td>11/11/1111</td>
+                    <td>8A</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>+91 9182736450</td>
+                    <td>empName@gmail.com</td>
+                    <td>
+                      789 Maple Lane Apt 10B, Building C Suburbia City, District
+                      67890 Territory State Countryland 54321
+                    </td>
+                    <td class="status">Active</td>
+                  </tr>
+                  <tr>
+                    <td>#001</td>
+                    <td>Employee Name</td>
+                    <td>11/11/1111</td>
+                    <td>8A</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>+91 9182736450</td>
+                    <td>empName@gmail.com</td>
+                    <td>
+                      789 Maple Lane Apt 10B, Building C Suburbia City, District
+                      67890 Territory State Countryland 54321
+                    </td>
+                    <td class="status">Active</td>
+                  </tr>
+                  <tr>
+                    <td>#001</td>
+                    <td>Employee Name</td>
+                    <td>11/11/1111</td>
+                    <td>8A</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>+91 9182736450</td>
+                    <td>empName@gmail.com</td>
+                    <td>
+                      789 Maple Lane Apt 10B, Building C Suburbia City, District
+                      67890 Territory State Countryland 54321
+                    </td>
+                    <td class="status">Active</td>
+                  </tr>
+                  <tr>
+                    <td>#001</td>
+                    <td>Employee Name</td>
+                    <td>11/11/1111</td>
+                    <td>8A</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>+91 9182736450</td>
+                    <td>empName@gmail.com</td>
+                    <td>
+                      789 Maple Lane Apt 10B, Building C Suburbia City, District
+                      67890 Territory State Countryland 54321
+                    </td>
+                    <td class="status">Active</td>
+                  </tr>
+                  <tr>
+                    <td>#001</td>
+                    <td>Employee Name</td>
+                    <td>11/11/1111</td>
+                    <td>8A</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>+91 9182736450</td>
+                    <td>empName@gmail.com</td>
+                    <td>
+                      789 Maple Lane Apt 10B, Building C Suburbia City, District
+                      67890 Territory State Countryland 54321
+                    </td>
+                    <td class="status">Active</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
       </div>
 
       <link rel="stylesheet" href="css/late.css" />

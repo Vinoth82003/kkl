@@ -2,6 +2,8 @@ console.log("filter.js");
 const all_rows = document.querySelectorAll(".today-attendance-table tbody tr");
 const all_shiftDisplay = document.querySelectorAll(".currentShift");
 
+const employe_rows = document.querySelectorAll(".employee-table tbody tr");
+
 let shiftSelect = document.getElementById("shift");
 
 shiftSelect.addEventListener("change", () => {
@@ -28,22 +30,6 @@ function filter(currentShift) {
     display.children[0].innerHTML = currentShift.toUpperCase();
   });
 }
-
-// function getCurrentShift() {
-//   const currentTime = new Date();
-//   const currentHour = currentTime.getHours();
-
-//   if (currentHour >= 6 && currentHour < 14) {
-//     return "a";
-//   } else if (currentHour >= 14 && currentHour < 22) {
-//     return "b";
-//   } else {
-//     return "c";
-//   }
-// }
-
-// const currentShift = getCurrentShift();
-// filter(currentShift);
 
 all_rows.forEach((row) => {
   let intime = row.querySelector(".intime");
@@ -73,6 +59,13 @@ all_rows.forEach((row) => {
   if (status.textContent.toLowerCase().trim() == "wrong shift") {
     status.innerHTML = `<p class="table-tag">Wrong Shift</p>`;
     row.classList.add("wrongShift");
+    row.querySelector(".action").innerHTML = `
+        <div class="btns-container">
+            <input type="hidden" name="type" id="type" value="wrongShift">
+            <button type="button" class="table-btn cancel">Cancel</button>
+            <button type="button" class="table-btn continue">Continue</button>
+        </div>
+      `;
   } else if (status.textContent.toLowerCase().trim() == "ot") {
     status.innerHTML = `<p class="table-tag">OT</p>`;
     row.classList.add("overTime");
@@ -82,6 +75,17 @@ all_rows.forEach((row) => {
   }
 
   console.log(status.textContent.trim());
+});
+
+employe_rows.forEach((row) => {
+  let status = row.querySelector(".status");
+  if (status.innerHTML.trim().toLowerCase() == "freezed") {
+    row.classList.add("freezed");
+    status.innerHTML = `<div class="inner-tag">Freezed</div>`;
+  } else {
+    row.classList.remove("freezed");
+    status.innerHTML = `<div class="tag">Active</div>`;
+  }
 });
 
 let shiftDetails = [
