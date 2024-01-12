@@ -4,6 +4,24 @@
   box-sizing: border-box;
 }
 
+.reload{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff38;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.circle-box{
+  width: 40px;
+  height: 40px;
+}
+
 table {
   width: -webkit-fill-available;
 }
