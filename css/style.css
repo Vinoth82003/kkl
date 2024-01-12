@@ -4,7 +4,13 @@
   box-sizing: border-box;
 }
 
-.reload{
+/* css to copy  */
+
+.reload {
+  display: none;
+}
+
+.reload.active {
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -17,14 +23,31 @@
   backdrop-filter: blur(2px);
 }
 
-.circle-box{
-  width: 40px;
-  height: 40px;
+.reload.active .circle-box {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px dashed blue;
+  border-right: 5px dashed blue;
+  animation: load 1s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes load {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 table {
   width: -webkit-fill-available;
 }
+
+/* till here copy  */
 
 /* Styling for the scrollbar track (the part the thumb slides along) */
 ::-webkit-scrollbar-track {
