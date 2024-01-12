@@ -350,3 +350,10 @@ tr:nth-child(even) {
   background: #008000;
   color: #fff;
 }
+
+.employee-table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
