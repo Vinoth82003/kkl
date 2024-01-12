@@ -333,6 +333,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 load_btn.addEventListener("click", () => {
   loadPage();
+  setTimeout(() => {
+    document.querySelector(".reload").classList.remove("active");
+  }, 2000);
 });
 
 window.addEventListener("load", () => {
