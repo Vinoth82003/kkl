@@ -202,7 +202,7 @@ all_radios.forEach((radio) => {
     all_radios.forEach((rad) => {
       rad.parentElement.classList.remove("active");
     });
-    if (radio.classList.contains("active")) {
+    if (radio.checked == true) {
       radio.parentElement.classList.add("active");
     }
   });
