@@ -199,12 +199,12 @@ let all_radios = document.querySelectorAll('input[type="radio"]');
 
 all_radios.forEach((radio) => {
   radio.addEventListener("click", () => {
-    all_radios.forEach((rad) => {
-      rad.parentElement.classList.remove("active");
-    });
-    if (radio.checked == true) {
+    // all_radios.forEach((rad) => {
+    //   rad.parentElement.classList.remove("active");
+    // });
+    // if (radio.checked == true) {
       radio.parentElement.classList.add("active");
-    }
+    // }
   });
 });
 
