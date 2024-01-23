@@ -202,9 +202,9 @@ all_radios.forEach((radio) => {
     // all_radios.forEach((rad) => {
     //   rad.parentElement.classList.remove("active");
     // });
-    if (radio.classList.contains("active")) {
-      radio.parentElement.classList.add("active");
-    }
+    // if (radio.classList.contains("active")) {
+      radio.parentElement.classList.toggle("active");
+    // }
   });
 });
 
