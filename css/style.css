@@ -24,7 +24,7 @@
   display: none;
 }
 
-<<<<<<< Updated upstream
+
 .reload.active .circle-box {
   width: 50px;
   height: 50px;
@@ -41,65 +41,6 @@
 
 @keyframes load {
   100% {
-=======
-.circle-box{
-  width:  90px;
-  height: 90px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: load 2s linear infinite;
-}
-
-.circle{
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top:    5px dashed #0000ff;
-  border-bottom: 5px dashed #008000;
-  border-left:   5px dashed #0000ff;
-  border-right:  5px dashed #008000;
-  position: relative;
-}
-
-.circle::after{
-  content: "";
-  width: calc(100% -  10px);
-  height: calc(100% - 10px);
-  background: #3e3e3e;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.circle::before{
-  content: "";
-  width: calc(100% -  20px);
-  height: calc(100% - 20px);
-  background: #ffffff;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1;
-  border-top:    5px dashed #0000ff;
-  border-bottom: 5px dashed #008000;
-  border-left:   5px dashed #0000ff;
-  border-right:  5px dashed #008000;
-  animation: anti-load 1s linear infinite;
-}
-
-@keyframes anti-load {
-  100%{
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes load {
-  100%{
->>>>>>> Stashed changes
     transform: rotate(360deg);
   }
 }
