@@ -312,6 +312,7 @@ inputDelete.addEventListener("click", () => {
   }
 });
 
+<<<<<<< Updated upstream
 selectDelete.addEventListener("click", () => {
   if (empArray.length <= 0) {
     alert("Select Atleast one Employee to delete..");
@@ -363,3 +364,5 @@ document.addEventListener("click", function (event) {
     });
   }
 });
+=======
+>>>>>>> Stashed changes
