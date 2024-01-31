@@ -918,7 +918,7 @@ option {
 }
 
 .info-body {
-  max-height: 460px;
+  max-height: 335px;
   overflow-y: scroll;
   position: relative;
 }

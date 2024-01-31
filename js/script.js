@@ -347,3 +347,19 @@ window.addEventListener("beforeunload", () => {
   let loadDiv = document.querySelector(".reload");
   loadDiv.classList.remove("active");
 });
+
+document.addEventListener("click", function (event) {
+  const is_Side_Section = event.target.closest(".side-sections");
+  const main_section = event.target.closest(".main-section");
+
+  if (is_Side_Section && !main_section) {
+    const openSections = document.querySelectorAll(
+      '.side-sections[style="display: flex;"]'
+    );
+
+    openSections.forEach((section) => {
+      section.style.display = "none";
+      console.log("closed open section");
+    });
+  }
+});
