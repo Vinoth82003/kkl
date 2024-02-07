@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKL - Employee</title>
+    <link rel="stylesheet" href="css/employee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="employee_page">
+        <nav class="nav_bar">
+            <div class="profile">
+                <div class="profile_image">
+                    <img src="../asset/images/male.jpeg" alt="">
+                </div>
+                <h1 class="username">User Name</h1>
+            </div>
+            <div class="brand_name">
+                <div class="brand_logo">
+                    <img src="../asset/logo/logomain.png" alt="">
+                </div>
+                <h1 class="brand_name">Kanchi Karpooram Limited</h1>
+            </div>
+            <a href="" class="logout">Logout</a>
+        </nav>
+        <aside class="sidemenu active">
+            <button class="toggle_sidemenu active">
+                <i class="open_icon fas fa-arrow-right"></i>
+                <i class="close_icon fas fa-arrow-left"></i>
+            </button>
+            <ul class="menu_options">
+                <li class="menu click profile_menu active" index="0">
+                    <div class="icon"><i class="fas fa-user"></i></div>
+                    <p class="text">Profile</p>
+                </li>
+                <li class="menu click leave" index="1">
+                    <div class="icon"><i class="fas fa-file-alt"></i></div>
+                    <p class="text">Leave Request</p>
+                </li>
+                <li class="menu click late" index="2">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <p class="text">Late Request</p>
+                </li>
+                <li class="menu click edit" index="3">
+                    <div class="icon"><i class="fas fa-user-edit"></i></div>
+                    <p class="text">edit profile</p>
+                </li>
+                <li class="menu click analysis" index="4">
+                    <div class="icon"><i class="fas fa-chart-bar"></i></div>
+                    <p class="text">Analysis</p>
+                </li>
+            </ul>
+        </aside>
+        <main class="main">
+            <header class="header">
+               <div class="user"> user : <div class="tag">Employee</div></div>
+               <div class="current_path">
+                Path / <div class="current_path_name">
+                    <span class="click" index="0">Profile</span>
+                </div>
+               </div>
+            </header>
+            <section class="section profile_section" index="0">
+                <div class="section_header">
+                    <div class="user_profile">
+                        <div class="profile_image_display">
+                            <img src="../asset/images/male.jpeg" alt="default image">
+                        </div>
+                        <ul class="basic_details">
+                            <li class="detail">user name</li>
+                            <li class="detail">#01010</li>
+                            <li class="detail">8B</li>
+                        </ul>
+                    </div>
+                    <div class="actions">
+                        <div class="click btn_action" index="3"><i class="fas fa-user-edit"></i></div>
+                    </div>
+                </div>
+                <div class="section_body">
+                    
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- js -->
+    <script src="js/employee.js"></script>
+</body>
+</html>
