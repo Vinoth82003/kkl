@@ -30,3 +30,11 @@ all_click.forEach(click => {
     click.classList.add("active");
     });
 });
+
+const all_input = document.querySelectorAll(".input");
+
+all_input.forEach(input => {
+    input.addEventListener("click", () => {
+        input.removeAttribute("readonly");
+    });
+});

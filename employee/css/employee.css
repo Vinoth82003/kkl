@@ -347,6 +347,7 @@ label{
     color: #fff;
     max-width: 80px;
     text-align: center;
+    white-space: nowrap;
 }
 
 button[type="submit"]{
@@ -372,6 +373,24 @@ button[type="submit"]{
     align-items: center;
     width: 50%;
     justify-content: center;
+}
+
+.edit_section .inner_section{
+    flex-direction: column;
+}
+
+.edit_form{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    justify-content: center;
+}
+
+.input_field{
+    max-width: calc(100% / 3.5);
+    min-width: 250px;
 }
 
 @media screen and (max-width:550px) {
@@ -426,6 +445,15 @@ button[type="submit"]{
 
     .inner_section{
         flex-direction: column-reverse;
+    }
+
+    .input_field{
+        max-width: calc(100%);
+        min-width: 100%;
+    }
+
+    .leave_request{
+        width: 100%;
     }
 }
 
