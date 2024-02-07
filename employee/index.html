@@ -6,6 +6,7 @@
     <title>KKL - Employee</title>
     <link rel="stylesheet" href="css/employee.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="png" href="../asset/logo/logomain.png">
 </head>
 <body>
     <div class="employee_page">
@@ -24,8 +25,8 @@
             </div>
             <a href="" class="logout">Logout</a>
         </nav>
-        <aside class="sidemenu active">
-            <button class="toggle_sidemenu active">
+        <aside class="sidemenu ">
+            <button class="toggle_sidemenu ">
                 <i class="open_icon fas fa-arrow-right"></i>
                 <i class="close_icon fas fa-arrow-left"></i>
             </button>
@@ -52,16 +53,16 @@
                 </li>
             </ul>
         </aside>
-        <main class="main">
+        <main class="main active">
             <header class="header">
                <div class="user"> user : <div class="tag">Employee</div></div>
                <div class="current_path">
-                Path / <div class="current_path_name">
-                    <span class="click" index="0">Profile</span>
-                </div>
+                    <div class="current_path_name">
+                        <span class="" index="0">Profile</span>
+                    </div>
                </div>
-            </header>
-            <section class="section profile_section" index="0">
+            </header> 
+            <section class="section profile_section" index="0" style="display: none ;">
                 <div class="section_header">
                     <div class="user_profile">
                         <div class="profile_image_display">
@@ -78,7 +79,76 @@
                     </div>
                 </div>
                 <div class="section_body">
-                    
+                    <ul class="personal_details">
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-user"></i></div> Name: username</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-id-card"></i></div> ID: #01010</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-venus-mars"></i></div> Gender: Male</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-phone-alt"></i></div> Contact: +91 9090909090</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-envelope"></i></div> Email: username@gmail.com</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-map-marker-alt"></i></div> Address: 19/8012, north street, village name, post name, talk name, city name, distric name, state name</li>
+                    </ul>
+                    <ul class="personal_details">
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-user-tie"></i></div> Branch: daily rated or fixed rate</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-briefcase"></i></div> Designation: HR</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-clock"></i></div> Shift: 8A</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-bed"></i></div> No of Leave Avail: 20</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-clock"></i></div> No of Late Avail: 20</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-check-circle"></i></div> Status: Active</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section leave_section" index="1" style="display: none ;">
+                <div class="inner_section">
+                    <div class="seperate_section image_container">
+                        <img src="../asset/images/Forms-bro.png" alt="">
+                    </div>
+                    <div class="seperate_section request_form">
+                        <form action="" method="post" class="leave_request">
+                            <h1>Leave Form</h1>
+                            <div class="input_field">
+                                <label>From </label>
+                                <input type="date" name="fromdate" id="fromdate" placeholder="dd-mm-yyyy" required>
+                            </div>
+                            <div class="input_field">
+                                <label>To </label>
+                                <input type="date" name="todate" id="todate" placeholder="dd-mm-yyyy" required>
+                            </div>
+                            <div class="input_field">
+                                <label>Reason </label>
+                                <textarea name="" id="" cols="30" rows="5" placeholder="enter your reason here"></textarea>
+                            </div>
+                            <div class="input_field">
+                                <button type="submit" class="requestButton">Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="section leave_section" index="2" style="display: block ;">
+                <div class="inner_section">
+                    <div class="seperate_section image_container">
+                        <img src="../asset/images/Lateness-rafiki.png" alt="">
+                    </div>
+                    <div class="seperate_section request_form">
+                        <form action="" method="post" class="leave_request">
+                            <h1>Late Form</h1>
+                            <div class="input_field">
+                                <label>From </label>
+                                <input type="date" name="fromdate" id="fromdate" placeholder="dd-mm-yyyy" required>
+                            </div>
+                            <div class="input_field">
+                                <label>To </label>
+                                <input type="date" name="todate" id="todate" placeholder="dd-mm-yyyy" required>
+                            </div>
+                            <div class="input_field">
+                                <label>Reason </label>
+                                <textarea name="" id="" cols="30" rows="5" placeholder="enter your reason here"></textarea>
+                            </div>
+                            <div class="input_field">
+                                <button type="submit" class="requestButton">Request</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </section>
         </main>
