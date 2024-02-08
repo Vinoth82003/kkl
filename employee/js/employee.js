@@ -81,6 +81,34 @@ all_btn.forEach(btn => {
     })
 });
 
+function message(){
+    let model = document.querySelector(".message_model");
+    model.classList.add("active");
+    if (response.status == true) {
+        model.classList.add("success");
+        model.querySelector(".title").innerHTML = `(
+            <i class="fas fa-check-circle"></i>
+            Success
+        )`
+    }else{
+        model.classList.add("error");
+        model.querySelector(".title").innerHTML = `(
+            <i class="fas fa-exclamation-circle"></i>
+            Error
+        )`
+    }
+
+    setTimeout(() => {
+        model.classList.remove("active");
+    }, 5005);
+}
+
+document.querySelector(".model_close").addEventListener("click", ()=>{
+    document.querySelector(".message_model").classList.remove("active");
+});
+
+message()
+
 all_cancel.forEach(btn => {
     btn.addEventListener("click", ()=>{
         btn.previousElementSibling.setAttribute("readonly",true);

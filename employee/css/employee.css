@@ -494,6 +494,106 @@ tr:nth-child(even){
     background: #d1d1d1;
 }
 
+.message_model{
+    max-width: calc(100% - 10px);
+    position: absolute;
+    z-index: 10px;
+    top: 50px;
+    right: 30px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px;
+    display: none;
+}
+
+.message_model.active{
+    display: block;
+}
+
+.model_close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color: red;
+}
+
+.title{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: capitalize;
+    display: flex;
+    gap: 10px;
+}
+
+.message{
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.message_model.success .title{
+    color: green;
+}
+
+.message_model.error .title{
+    color: red;
+}
+
+.message{
+    font-weight: 600;
+}
+
+.bar{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    /* background: #ddd; */
+    width: 100%;
+    height: 5px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.bar::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: #3131ff;
+    left: 0;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+@keyframes bar {
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes model {
+    99%{
+        display: block;
+    }100%{
+        display: none;
+    }
+}
+
+.message_model.active .bar::after{
+    animation: 5s bar ease forwards ;
+    animation-delay: .5s;
+}
+
+.message_model.active{
+    animation: 5s model ease forwards ;
+}
+
+
 @media screen and (max-width:750px) {
     .analysis_header{
         flex-direction: column;
