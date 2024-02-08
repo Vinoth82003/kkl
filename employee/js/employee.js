@@ -81,22 +81,29 @@ all_btn.forEach(btn => {
     })
 });
 
+let response ={
+    status : true,
+    message : "Your request is submitted to the admin successfully",
+}
+
 function message(){
     let model = document.querySelector(".message_model");
     model.classList.add("active");
     if (response.status == true) {
         model.classList.add("success");
-        model.querySelector(".title").innerHTML = `(
+        model.querySelector(".title").innerHTML = `
             <i class="fas fa-check-circle"></i>
             Success
-        )`
+        `
     }else{
         model.classList.add("error");
-        model.querySelector(".title").innerHTML = `(
+        model.querySelector(".title").innerHTML = `
             <i class="fas fa-exclamation-circle"></i>
             Error
-        )`
+        `
     }
+
+    model.querySelector(".message").innerHTML = response.message;
 
     setTimeout(() => {
         model.classList.remove("active");

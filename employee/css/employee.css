@@ -576,21 +576,10 @@ tr:nth-child(even){
     }
 }
 
-@keyframes model {
-    99%{
-        display: block;
-    }100%{
-        display: none;
-    }
-}
 
 .message_model.active .bar::after{
     animation: 5s bar ease forwards ;
     animation-delay: .5s;
-}
-
-.message_model.active{
-    animation: 5s model ease forwards ;
 }
 
 
