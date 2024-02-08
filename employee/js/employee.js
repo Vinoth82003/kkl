@@ -70,7 +70,13 @@ all_input.forEach(input => {
 all_btn.forEach(btn => {
     btn.addEventListener("click", ()=>{
         let newvalue = btn.previousElementSibling.value
-        user.new = (newvalue);
+        if (newvalue.length > 0) {
+            user.new = (newvalue);
+        }else{
+            user.new = user.old;
+        }
+        btn.previousElementSibling.value = user.new;
+        // send data to backend
         console.log(user);
     })
 });
@@ -78,7 +84,10 @@ all_btn.forEach(btn => {
 all_cancel.forEach(btn => {
     btn.addEventListener("click", ()=>{
         btn.previousElementSibling.setAttribute("readonly",true);
-        btn.parentElement.classList.remove("active")
+        btn.parentElement.classList.remove("active");
+
+        let input = btn.previousElementSibling.previousElementSibling;
+        input.value = user.old;
     });
 });
 
