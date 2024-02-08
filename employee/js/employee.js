@@ -19,7 +19,6 @@ oldData.oldcontact = document.querySelector(".ucontact").textContent.trim();
 oldData.oldaddress = document.querySelector(".uaddress").textContent.trim();
 oldData.olddoj = document.querySelector(".udoj").textContent.trim();
 
-console.log(oldData);
 
 let uId = document.querySelector(".uid").textContent.trim();
 user.empId = uId;
