@@ -391,6 +391,113 @@ button[type="submit"]{
 .input_field{
     max-width: calc(100% / 3.5);
     min-width: 250px;
+    position: relative;
+}
+
+.btn{
+    position: absolute;
+    right: 0;
+    padding: 7px 15px;
+    border-radius: 20px;
+    border: none;
+    background: green;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.cancel{
+    background: orangered;
+    right: 65px;
+}
+
+.input_field.active .btn{
+    display: inline-block;
+}
+
+
+/* analysis css */
+
+
+.analysis_header{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.analysis_card{
+    flex-basis: 50%;
+    width: 100%;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #818181;
+    border-radius: 5px;
+}
+
+.chart{
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-container{
+    max-height: 100%;
+}
+
+.card_title{
+    font-size: 20px;
+    font-weight: 900;
+    color: #333333;
+    text-transform: capitalize;
+}
+
+.table{
+    margin-top: 5px;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 10px;
+}
+
+.request_table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.th,td{
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+th{
+    background: #333333;
+    color: #fff;
+    height: 50px;
+    text-transform: capitalize;
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 5px;
+}
+
+tr:nth-child(even){
+    background: #d1d1d1;
+}
+
+@media screen and (max-width:750px) {
+    .analysis_header{
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width:550px) {
@@ -454,6 +561,11 @@ button[type="submit"]{
 
     .leave_request{
         width: 100%;
+    }
+
+    .th,td{
+        padding: 10px;
+        text-align: left;
     }
 }
 

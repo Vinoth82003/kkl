@@ -62,7 +62,7 @@
                     </div>
                </div>
             </header> 
-            <section class="section profile_section" index="0" style="display: none ;">
+            <section class="section profile_section" index="0" style="display: block ;">
                 <div class="section_header">
                     <div class="user_profile">
                         <div class="profile_image_display">
@@ -81,7 +81,7 @@
                 <div class="section_body">
                     <ul class="personal_details">
                         <li class="detail_display"><div class="detail_icon"><i class="fas fa-user"></i></div> Name: username</li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-id-card"></i></div> ID: #01010</li>
+                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-id-card"></i></div> ID: <span class="uid"> #01010</span></li>
                         <li class="detail_display"><div class="detail_icon"><i class="fas fa-venus-mars"></i></div> Gender: Male</li>
                         <li class="detail_display"><div class="detail_icon"><i class="fas fa-phone-alt"></i></div> Contact: +91 9090909090</li>
                         <li class="detail_display"><div class="detail_icon"><i class="fas fa-envelope"></i></div> Email: username@gmail.com</li>
@@ -152,44 +152,164 @@
                     </div>
                 </div>
             </section>
-            <section class="section edit_section" index="3" style="display: block ;">
+            <section class="section edit_section" index="3" style="display: none ;">
                 <div class="inner_section">
                     <h1 class="text">
                         Editable Content
                     </h1>
-                    <form action="" method="post" class="edit_form">
+                    <div class="edit_form">
                         
                         <div class="input_field">
                             <label>Name</label>
                             <input type="text" name="name" id="name"  class="input" value="john doe" readonly>
+                            <button class="btn submit">save</button>
+                            <button class="btn cancel">cancel</button>
                         </div>
                         <div class="input_field">
                             <label>Gender</label>
                             <input type="text" name="gender" id="gender"  class="input" value="male" readonly>
+                            <button class="btn submit">save</button>
+                            <button class="btn cancel">cancel</button>
                         </div>
                         <div class="input_field">
                             <label>Email</label>
                             <input type="text" name="email" id="email"  class="input" value="johndoe@gmail.com" readonly>
+                            <button class="btn submit">save</button>
+                            <button class="btn cancel">cancel</button>
                         </div>
                         <div class="input_field">
                             <label>Contact No</label>
                             <input type="text" name="contact" id="contact"  class="input" value="+91 9087564321" readonly>
+                            <button class="btn submit">save</button>
+                            <button class="btn cancel">cancel</button>
                         </div>
                         <div class="input_field">
                             <label>DOJ</label>
                             <input type="date" name="contact" id="contact"  class="input" value="1111-11-11" readonly>
+                            <button class="btn submit">save</button>
+                            <button class="btn cancel">cancel</button>
                         </div>
                         <div class="input_field">
                             <label>Address</label>
                             <textarea name="address" id="address" cols="30" rows="10" class="input" readonly>19/8012, north street, village name, post name, talk name, city name, distric name, state name</textarea>
+                            <button class="btn submit">save</button>
+                            <button class="btn cancel">cancel</button>
                         </div>
-                    </form>
+                    </div>
+                </div>
+            </section>
+            <section class="section edit_section" index="4" style="display: none ;">
+                <div class="inner_section">
+                    <h1 class="text">
+                        Employee Analysis
+                    </h1>
+                    <div class="analysis_header">
+                        <div class="analysis_card">
+                            <div class="card_title">Attendance Analysis</div>
+                            <div class="chart">
+                                <canvas id="attendanceChart" class="chart-container"></canvas>
+                            </div>
+                        </div>
+                        <div class="analysis_card">
+                            <div class="card_title">Request Analysis</div>
+                            <div class="chart">
+                                <canvas id="workChart" class="chart-container"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <h1 class="title">Request Table</h1>
+                        <table class="request_table">
+                            <thead>
+                                <th>sno</th>
+                                <th>request type</th>
+                                <th>request date</th>
+                                <th>request reason</th>
+                                <th>request status</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Leave</td>
+                                    <td>11/11/1111</td>
+                                    <td>bus missed</td>
+                                    <td>accepted</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>late</td>
+                                    <td>11/11/1111</td>
+                                    <td>bus missed</td>
+                                    <td>declined</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
         </main>
     </div>
 
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+    <script>
+        // Attendance Data
+        let attendanceData = {
+            absent: 20,
+            present: 10,
+        };
+
+        // Work Data
+        let workData = {
+            leaveRequest: 15,
+            lateRequest: 17
+        };
+
+        // Create Chart function
+        function createChart(data, canvasId, title) {
+            let ctx = document.getElementById(canvasId).getContext('2d');
+            let labels = Object.keys(data);
+            let values = Object.values(data);
+
+            let chart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels.map(label => `${label} ${data[label]} days`),
+                    datasets: [{
+                        label: title,
+                        data: values,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: title
+                    }
+                }
+            });
+        }
+
+        // Create Attendance Chart
+        createChart(attendanceData, 'attendanceChart', 'Attendance Composition');
+
+        // Create Work Chart
+        createChart(workData, 'workChart', 'Work Composition');
+    </script>
+
     <script src="js/employee.js"></script>
 </body>                                                         
 </html>
