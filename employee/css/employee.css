@@ -336,8 +336,11 @@ img{
 input,textarea{
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #333333;
+    border: none;
+    border-bottom: 2px solid #333333;
+    outline: none;
+    background: #eeeeee;
+    border-radius: 5px 5px 0px 0px;
 }
 
 label{
@@ -348,6 +351,8 @@ label{
     max-width: 80px;
     text-align: center;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
 }
 
 button[type="submit"]{
@@ -375,7 +380,7 @@ button[type="submit"]{
     justify-content: center;
 }
 
-.edit_section .inner_section{
+.edit_section .inner_section, .analysis_section .inner_section{
     flex-direction: column;
 }
 
@@ -497,7 +502,7 @@ tr:nth-child(even){
 .message_model{
     max-width: calc(100% - 10px);
     position: absolute;
-    z-index: 10px;
+    z-index: 10;
     top: 50px;
     right: 30px;
     padding: 10px;
