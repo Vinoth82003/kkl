@@ -53,6 +53,7 @@ function showSection(index) {
     all_click.forEach(btn => {
         if (index == btn.getAttribute("index")) {
             btn.classList.add("active");
+            document.querySelector(".current_path_name").innerHTML = btn.textContent.trim();
         }else{
             btn.classList.remove("active");
         }

@@ -587,6 +587,9 @@ tr:nth-child(even){
     animation-delay: .5s;
 }
 
+.none{
+    display: none;
+}
 
 @media screen and (max-width:750px) {
     .analysis_header{
