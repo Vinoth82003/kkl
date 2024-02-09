@@ -113,7 +113,11 @@ input{
     border-radius: 0px 5px 5px 0px;
     background: rgba(128, 0, 128, 0.349);
     outline: none;
+    color: #fff;
+    font-size: 16px;
+    caret-color: #fff;
 }
+
 
 .icon{
     width: 50px;
@@ -138,4 +142,10 @@ input{
     font-size: 18px;
     font-family: sans-serif;
     cursor: pointer;
+}
+
+@media screen and (max-width:475px) {
+    .brand{
+        flex-direction: column;
+    }
 }
