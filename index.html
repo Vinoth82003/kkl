@@ -14,6 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
     <nav class="nav-bar">
@@ -49,7 +50,13 @@
     </nav>
     <aside class="sidebar side-sections">
       <ul class="side-menu">
-        <li class="menu-option active action-menu" index="0">
+        <li class="menu-option active action-menu" index="4">
+          <span class="icon">
+            <i class="fas fa-chart-pie"></i>
+          </span>
+          <p class="menu-name">Analysis</p>
+        </li>
+        <li class="menu-option  action-menu" index="0">
           <span class="icon">
             <i class="far fa-calendar-check"></i>
           </span>
@@ -692,7 +699,7 @@
 
       <div
         class="attendance-container page-action"
-        style="display: block"
+        style="display: none"
         index="0"
       >
         <menu class="table-menu" style="display: flex">
@@ -1720,6 +1727,57 @@
         </section>
       </div>
 
+      <!-- chart html -->
+      <link rel="stylesheet" href="css/chart.css">
+        <section class="attendance-container page-action"
+        style="display: block"
+        index="4">
+        <section class="frame today-attendance" style="display: flex" index="0">
+          <div class="inner-frame">
+            <div class="frame-header">
+              <div class="frame-details">
+                <p class="frame-name">
+                  <i class="fas fa-users"></i>Employee count
+                </p>
+              </div>
+              <select name="" id="" class="tag-btn">
+                <option value="today employee">Today Employee</option>
+                <option value="today attendance">Today Attendance</option>
+                <option value="yesterday employee">Yesterday Employee</option>
+                <option value="yesterday attendance">Yesterday Attendance</option>
+              </select>
+              <div class="frame-options">
+                <button type="button" class="download">
+                  <i class="fas fa-file-excel"></i>
+                </button>
+              </div>
+            </div>
+            <div class="frame-body">
+             <div class="chart_container employee_count">
+                <div class="chart">
+                  <svg id="pie-chart"></svg>
+                </div>
+                <div class="chart_details">
+                  <ul class="details">
+                    <li class="detail total">
+                      <span class="detail_title">Total Employees : <span class="tota">40</span></span>
+                    </li>
+                    <li class="detail total">
+                      <span class="detail_title">Total Present : <span class="tota">20</span></span>
+                    </li>
+                    <li class="detail total">
+                      <span class="detail_title">Total Absent : <span class="tota">20</span></span>
+                    </li>
+                  </ul>
+                </div>
+             </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <script src="js/chart.js"></script>
+      <!-- /chart html -->
+
       <link rel="stylesheet" href="css/late.css" />
       <section
         class="late-table-section page-action"
@@ -1904,6 +1962,7 @@
           </table>
         </div>
       </section>
+
     </main>
     <!-- Include xlsx library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
