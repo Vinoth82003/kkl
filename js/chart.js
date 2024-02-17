@@ -21,8 +21,8 @@ let present = [
 
 let absent = [
     { label: 'KKL Absent', value: ft_employee },
-    { label: 'DR Absent', value: dr_employee },
-    { label: 'FT Absent', value: kkl_employee },
+    { label: 'DR Absent', value: kkl_employee },
+    { label: 'FT Absent', value: dr_employee },
 ];
 
 let ctx = document.getElementById('myPieChart').getContext('2d');
