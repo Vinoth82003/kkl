@@ -12,6 +12,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .chart_details{
@@ -26,7 +28,12 @@
     font-weight: bold;
 }
 
-svg {
-    width: 100%;
-    height: auto;
+.title{
+    text-transform: capitalize;
+}
+
+@media screen and (max-width:720px) {
+    .chart_container{
+        flex-direction: column;
+    }
 }

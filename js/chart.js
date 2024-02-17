@@ -1,55 +1,113 @@
 console.log("chart.js");
+console.clear();
 
-// Data
 let total_employee = 100;
+let total_absent = 40;
+let total_present = 60;
 let kkl_employee = 50;
 let dr_employee = 30;
 let ft_employee = 20;
 
-let employee = [
-    { label: 'KKL', value: kkl_employee },
-    { label: 'DR', value: dr_employee },
-    { label: 'FT', value: ft_employee }
+let totalData = [
+    { label: 'Total Present', value: total_present },
+    { label: 'Total Absent', value: total_absent },
 ];
 
-// SVG Size
-let width = 500;
-let height = 500;
-let radius = Math.min(width, height) / 2;
+let present = [
+    { label: 'KKL Present', value: kkl_employee },
+    { label: 'DR Present', value: dr_employee },
+    { label: 'FT Present', value: ft_employee },
+];
 
-// Color Scale
-let color = d3.scaleOrdinal()
-    .domain(employee.map(d => d.label))
-    .range(d3.schemeCategory10);
+let absent = [
+    { label: 'KKL Absent', value: ft_employee },
+    { label: 'DR Absent', value: dr_employee },
+    { label: 'FT Absent', value: kkl_employee },
+];
 
-// Pie Generator
-let pie = d3.pie()
-    .value(d => d.value);
+let ctx = document.getElementById('myPieChart').getContext('2d');
+let myPieChart; // Declare myPieChart in the global scope
 
-// Arc Generator
-let arc = d3.arc()
-    .innerRadius(0)
-    .outerRadius(radius);
+function employeeDisplay(title,employee) {
+    let all_data = document.querySelector(".details");
+    all_data.innerHTML = "";
+    all_data.innerHTML = `
+        <li class="detail title">
+            <span class="detail_title"><span class="tota">${title}</span></span>
+        </li>
+        <li class="detail total">
+            <span class="detail_title">Total Employees : <span class="tota">${total_employee}</span></span>
+        </li>
+    `;
+    employee.forEach(data => {
+        let li = document.createElement("li");
+        li.className = "detail";
+        li.innerHTML = ` <span class="detail_title">${data.label} : <span class="tota">${data.value}</span></span>`;
+        all_data.appendChild(li);
+    });
 
-// SVG Element
-let svg = d3.select("#pie-chart")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g")
-    .attr("transform", `translate(${width / 2}, ${height / 2})`);
+    // Destroy existing chart if it exists
+    if (myPieChart) {
+        myPieChart.destroy();
+    }
 
-// Draw Pie Chart
-let arcs = svg.selectAll("arc")
-    .data(pie(employee))
-    .enter()
-    .append("g");
+    myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: employee.map(emp => emp.label),
+            datasets: [{
+                label: 'Employee Distribution',
+                data: employee.map(emp => emp.value),
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+}
 
-arcs.append("path")
-    .attr("d", arc)
-    .attr("fill", d => color(d.data.label));
+employeeDisplay("today employee",totalData);
 
-// Add Labels
-arcs.append("text")
-    .attr("transform", d => `translate(${arc.centroid(d)})`)
-    .attr("text-anchor", "middle")
-    .text(d => `${d.data.label} (${((d.endAngle - d.startAngle) / (2 * Math.PI) * 100).toFixed(2)}%)`);
+// Function to handle changes in the select element
+document.getElementById('selectOption').addEventListener('change', function () {
+    let selectedOption = this.value;
+    if (selectedOption === 'today employee') {
+        employeeDisplay(this.value,totalData);
+    } else if (selectedOption === 'today attendance') {
+        employeeDisplay(this.value,present);
+    } else if (selectedOption === 'yesterday employee') {
+        employeeDisplay(this.value,totalData); // Change this to yesterday's employee data if available
+    } else if (selectedOption === 'yesterday attendance') {
+        employeeDisplay(this.value,absent); // Change this to yesterday's attendance data if available
+    }
+});
+
+document.querySelector('.downloadImage').addEventListener('click', function() {
+    // Select the chart container element
+    const chartContainer = document.querySelector('.chart_container');
+    let fileName = document.querySelector(".chart_container .details .title").textContent.trim();
+    // Use html2canvas to capture the content of the chart container
+    html2canvas(chartContainer).then(canvas => {
+        // Convert the canvas to a data URL
+        const dataURL = canvas.toDataURL();
+
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = dataURL;
+        link.download = `${fileName}.png`; // Set the download filename
+
+        // Append the link to the document and trigger a click event to download the image
+        document.body.appendChild(link);
+        link.click();
+
+        // Remove the temporary link from the document
+        document.body.removeChild(link);
+    });
+});

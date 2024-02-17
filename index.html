@@ -14,7 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <nav class="nav-bar">
@@ -1740,34 +1740,27 @@
                   <i class="fas fa-users"></i>Employee count
                 </p>
               </div>
-              <select name="" id="" class="tag-btn">
+              <select name="" id="selectOption" class="tag-btn">
                 <option value="today employee">Today Employee</option>
                 <option value="today attendance">Today Attendance</option>
                 <option value="yesterday employee">Yesterday Employee</option>
                 <option value="yesterday attendance">Yesterday Attendance</option>
-              </select>
+            </select>
+        
               <div class="frame-options">
-                <button type="button" class="download">
-                  <i class="fas fa-file-excel"></i>
+                <button type="button" class="downloadImage">
+                  <i class="fas fa-save"></i>
                 </button>
               </div>
             </div>
             <div class="frame-body">
              <div class="chart_container employee_count">
                 <div class="chart">
-                  <svg id="pie-chart"></svg>
+                  <canvas id="myPieChart"></canvas>
                 </div>
                 <div class="chart_details">
                   <ul class="details">
-                    <li class="detail total">
-                      <span class="detail_title">Total Employees : <span class="tota">40</span></span>
-                    </li>
-                    <li class="detail total">
-                      <span class="detail_title">Total Present : <span class="tota">20</span></span>
-                    </li>
-                    <li class="detail total">
-                      <span class="detail_title">Total Absent : <span class="tota">20</span></span>
-                    </li>
+                    
                   </ul>
                 </div>
              </div>
