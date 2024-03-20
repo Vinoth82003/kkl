@@ -15,7 +15,7 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" type="image/png" href="asset/logo/logomain.png">
+    <link rel="icon" type="image/png" href="asset/logo/logomain.png" />
   </head>
   <body>
     <nav class="nav-bar">
@@ -49,7 +49,7 @@
         </li>
       </ul>
     </nav>
-    <aside class="sidebar side-sections">
+    <aside class="sidebar side-sections active">
       <ul class="side-menu">
         <li class="menu-option active action-menu" index="4">
           <span class="icon">
@@ -57,7 +57,7 @@
           </span>
           <p class="menu-name">Analysis</p>
         </li>
-        <li class="menu-option  action-menu" index="0">
+        <li class="menu-option action-menu" index="0">
           <span class="icon">
             <i class="far fa-calendar-check"></i>
           </span>
@@ -224,7 +224,7 @@
     </section>
 
     <section class="upload-model main-section" style="display: none">
-      <div class="inner-upload ">
+      <div class="inner-upload">
         <a class="close-btn">
           <i class="fas fa-times-circle"></i>
         </a>
@@ -273,7 +273,7 @@
 
     <!-- section to copy -->
     <section class="delete-model main-section" style="display: none">
-      <div class="inner-delete-model ">
+      <div class="inner-delete-model">
         <a class="close-btn">
           <i class="fas fa-times-circle"></i>
         </a>
@@ -562,7 +562,7 @@
     </section>
     <!-- section to cpoy -->
     <section class="edit-model main-section" style="display: none">
-      <div class="inner-delete-model ">
+      <div class="inner-delete-model">
         <a class="close-btn">
           <i class="fas fa-times-circle"></i>
         </a>
@@ -687,7 +687,7 @@
       </div>
     </section>
 
-    <main class="main active">
+    <main class="main">
       <header class="details-bar">
         <div class="user-details">
           <h1 class="user-role">User ~ <span class="role tag">Admin</span></h1>
@@ -1729,10 +1729,12 @@
       </div>
 
       <!-- chart html -->
-      <link rel="stylesheet" href="css/chart.css">
-        <section class="attendance-container page-action"
+      <link rel="stylesheet" href="css/chart.css" />
+      <section
+        class="attendance-container page-action"
         style="display: block"
-        index="4">
+        index="4"
+      >
         <section class="frame today-attendance" style="display: flex" index="0">
           <div class="inner-frame">
             <div class="frame-header">
@@ -1745,9 +1747,11 @@
                 <option value="today employee">Today Employee</option>
                 <option value="today attendance">Today Attendance</option>
                 <option value="yesterday employee">Yesterday Employee</option>
-                <option value="yesterday attendance">Yesterday Attendance</option>
-            </select>
-        
+                <option value="yesterday attendance">
+                  Yesterday Attendance
+                </option>
+              </select>
+
               <div class="frame-options">
                 <button type="button" class="downloadImage">
                   <i class="fas fa-file-download"></i>
@@ -1755,16 +1759,14 @@
               </div>
             </div>
             <div class="frame-body">
-             <div class="chart_container employee_count">
+              <div class="chart_container employee_count">
                 <div class="chart">
                   <canvas id="myPieChart"></canvas>
                 </div>
                 <div class="chart_details">
-                  <ul class="details">
-                    
-                  </ul>
+                  <ul class="details"></ul>
                 </div>
-             </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1956,7 +1958,6 @@
           </table>
         </div>
       </section>
-
     </main>
     <!-- Include xlsx library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>

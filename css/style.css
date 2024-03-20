@@ -24,7 +24,6 @@
   display: none;
 }
 
-
 .reload.active .circle-box {
   width: 50px;
   height: 50px;
@@ -327,7 +326,7 @@ li {
 }
 
 .sidebar.active {
-  width: 160px;
+  width: 200px;
 }
 
 .side-menu {
@@ -384,11 +383,11 @@ li {
 }
 
 .main {
-  width: calc(100vw - 180px);
+  width: calc(100vw - 210px);
   min-height: calc(100vh - 60px);
   position: relative;
   top: 60px;
-  left: 160px;
+  left: 200px;
   padding: 10px;
   z-index: 5;
   transition: all 0.5s;
@@ -667,11 +666,10 @@ li {
     display: none;
   }
 
-  .circle-box{
+  .circle-box {
     width: 60px;
     height: 60px;
   }
-
 }
 
 .upload-model,
