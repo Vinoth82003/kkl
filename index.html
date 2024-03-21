@@ -69,6 +69,18 @@
           </span>
           <p class="menu-name">Employees</p>
         </li>
+        <li class="menu-option action-menu" index="5">
+          <span class="icon">
+            <i class="fas fa-user-plus"></i>
+          </span>
+          <p class="menu-name">Add Employee</p>
+        </li>
+        <li class="menu-option action-menu" index="6">
+          <span class="icon">
+            <i class="fas fa-search"></i>
+          </span>
+          <p class="menu-name">Search Employee</p>
+        </li>
         <li class="menu-option action-menu" index="1">
           <span class="icon">
             <i class="far fa-clock"></i>
@@ -1727,6 +1739,298 @@
           </div>
         </section>
       </div>
+      <!-- 21-03 -->
+      <div
+        class="employee-container page-action"
+        style="display: none"
+        index="5"
+      >
+        <section class="frame today-attendance">
+          <div class="inner-frame">
+            <div class="frame-header">
+              <div class="frame-details">
+                <p class="frame-name">
+                  <i class="fas fa-user-plus"></i> Add Employee
+                </p>
+              </div>
+            </div>
+            <div class="frame-body">
+              <div class="list-container" style="display: flex">
+                <form action="#" method="post" class="addEmployee">
+                  <div class="input_field">
+                    <label>Employee ID</label>
+                    <input type="text" name="" id="" placeholder="eg: 10001" />
+                  </div>
+                  <div class="input_field">
+                    <label>Employee Name</label>
+                    <input
+                      type="text"
+                      name="empname"
+                      id="empname"
+                      placeholder="eg: John Doe"
+                    />
+                  </div>
+                  <div class="input_field">
+                    <label>Designation</label>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      placeholder="eg: SECURITY ASSISTENT"
+                    />
+                  </div>
+                  <div class="input_field">
+                    <label>Role</label>
+                    <select name="" id="">
+                      <option value="">Employee</option>
+                      <option value="">Admin</option>
+                    </select>
+                  </div>
+                  <div class="input_field">
+                    <label>Email</label>
+                    <input
+                      type="email"
+                      name=""
+                      id=""
+                      placeholder="eg: JohnDoe@gmail.com"
+                    />
+                  </div>
+                  <div class="input_field">
+                    <label>Phone Number</label>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      placeholder="eg: 9182736450"
+                    />
+                  </div>
+                  <div class="input_field">
+                    <label>Aadhar Number</label>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      placeholder="eg: 9182 736 450"
+                    />
+                  </div>
+                  <div class="input_field">
+                    <label>Gender</label>
+                    <select name="" id="">
+                      <option value="">Male</option>
+                      <option value="">Female</option>
+                    </select>
+                  </div>
+                  <div class="input_field">
+                    <label>Branch</label>
+                    <input type="text" name="" id="" placeholder="eg: kkl" />
+                  </div>
+                  <div class="input_field">
+                    <label>Shift</label>
+                    <input type="text" name="" id="" placeholder="eg: A" />
+                  </div>
+                  <div class="input_field">
+                    <label>Address</label>
+                    <textarea type="text" name="" id=""> </textarea>
+                  </div>
+                  <div class="button">
+                    <button type="submit" class="addEmployeeBtn">
+                      Add Employee
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div
+        class="employee-container page-action"
+        style="display: block"
+        index="6"
+      >
+        <section class="frame today-attendance">
+          <div class="inner-frame">
+            <div class="frame-header">
+              <div class="frame-details multi-options">
+                <p class="frame-name">
+                  <i class="fas fa-search"></i> search Employee
+                </p>
+                <div class="search_bar">
+                  <input
+                    type="search"
+                    name="search"
+                    id="empsearch "
+                    class="empSearch"
+                    placeholder="search by employee ID..!"
+                  />
+                </div>
+                <div class="print">
+                  <button type="button" class="printBtn">P</button>
+                </div>
+              </div>
+            </div>
+            <div class="frame-body">
+              <div class="list-container card_display" style="display: flex">
+                <div class="serac_card dataTextDisplay" data-id="">
+                  <p class="resultText text" style="margin-top: 20px">
+                    Your result will appear here..!
+                  </p>
+                </div>
+                <div class="serac_card" data-id="1">
+                  <div class="emp_profile">
+                    <img src="/asset/images/male.jpeg" alt="emp image" />
+                  </div>
+                  <ul class="emp_details">
+                    <div class="half">
+                      <li class="empDetail line">
+                        Emp ID : <span>00001</span>
+                      </li>
+                      <li class="empDetail line">
+                        Emp Name : <span>Vinoth S</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Present : <span>20</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Wrong shift : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Call duty : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Half day : <span>10</span>
+                      </li>
+                    </div>
+                    <div class="half">
+                      <li class="empDetail line">
+                        No Of Week Off : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Week Off Present : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Leave : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Absent : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Holiday : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Holiday Present : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Rest: <span>10</span>
+                      </li>
+                    </div>
+                  </ul>
+                </div>
+                <div class="serac_card" data-id="2">
+                  <div class="emp_profile">
+                    <img src="/asset/images/male.jpeg" alt="emp image" />
+                  </div>
+                  <ul class="emp_details">
+                    <div class="half">
+                      <li class="empDetail line">
+                        Emp ID : <span>00001</span>
+                      </li>
+                      <li class="empDetail line">
+                        Emp Name : <span>Vinoth S</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Present : <span>20</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Wrong shift : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Call duty : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Half day : <span>10</span>
+                      </li>
+                    </div>
+                    <div class="half">
+                      <li class="empDetail line">
+                        No Of Week Off : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Week Off Present : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Leave : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Absent : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Holiday : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Holiday Present : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Rest: <span>10</span>
+                      </li>
+                    </div>
+                  </ul>
+                </div>
+                <div class="serac_card" data-id="3">
+                  <div class="emp_profile">
+                    <img src="/asset/images/male.jpeg" alt="emp image" />
+                  </div>
+                  <ul class="emp_details">
+                    <div class="half">
+                      <li class="empDetail line">
+                        Emp ID : <span>00001</span>
+                      </li>
+                      <li class="empDetail line">
+                        Emp Name : <span>Vinoth S</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Present : <span>20</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Wrong shift : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Call duty : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Half day : <span>10</span>
+                      </li>
+                    </div>
+                    <div class="half">
+                      <li class="empDetail line">
+                        No Of Week Off : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Week Off Present : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Leave : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Absent : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Holiday : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Holiday Present : <span>10</span>
+                      </li>
+                      <li class="empDetail line">
+                        No Of Rest: <span>10</span>
+                      </li>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <!-- chart html -->
       <link rel="stylesheet" href="css/chart.css" />
@@ -1765,6 +2069,35 @@
                 </div>
                 <div class="chart_details">
                   <ul class="details"></ul>
+                  <table class="currentEmpTable">
+                    <thead>
+                      <th>empid</th>
+                      <th>name</th>
+                      <th>designation</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>john doe</td>
+                        <td>hr</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>john doe</td>
+                        <td>hr</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>john doe</td>
+                        <td>hr</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>john doe</td>
+                        <td>hr</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -1964,5 +2297,6 @@
     <script src="js/script.js"></script>
     <script src="js/filter.js"></script>
     <script src="js/action.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

@@ -349,6 +349,7 @@ li {
   padding: 0 10px;
   cursor: pointer;
   position: relative;
+  text-wrap: nowrap;
 }
 
 .menu-name {
@@ -927,4 +928,123 @@ option {
   max-height: 335px;
   overflow-y: scroll;
   position: relative;
+}
+
+/* 21-03 form css */
+form.addEmployee {
+  max-width: 100%;
+  flex-wrap: wrap;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.input_field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.addEmployeeBtn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background: purple;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+form.addEmployee input,
+form.addEmployee textarea,
+form.addEmployee select {
+  padding: 10px;
+  border: 2px solid #afafff;
+  border-radius: 4px;
+  outline: none;
+}
+
+.currentEmpTable th {
+  text-transform: capitalize;
+}
+
+.currentEmpTable {
+  min-width: 500px;
+  margin-top: 10px;
+}
+
+.multi-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.empSearch {
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  width: 400px;
+}
+
+.printBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #3f3f3f;
+  cursor: pointer;
+}
+
+.serac_card {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  position: relative;
+  display: none;
+}
+
+.empDetail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emp_details {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.empDetail {
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.empDetail span {
+  padding: 5px;
+  border-radius: 3px;
+  background: #555;
+  color: #fff;
+}
+
+.card_display {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataTextDisplay {
+  display: block;
 }
