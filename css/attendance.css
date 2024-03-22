@@ -50,7 +50,9 @@
 
 .download,
 .grid,
-.list, .downloadImage {
+.list,
+.downloadImage,
+.donwload_search {
   width: 37px;
   height: 37px;
   border-radius: 50%;

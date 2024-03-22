@@ -1060,4 +1060,8 @@ form.addEmployee select {
   color: #fff;
 }
 
+.display {
+  display: flex;
+}
+
 /* css finish */
