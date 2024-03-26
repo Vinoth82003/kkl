@@ -1,334 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KKL - Employee</title>
-    <link rel="stylesheet" href="css/employee.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="png" href="../asset/logo/logomain.png">
-</head>
-<body>
+    <link rel="stylesheet" href="css/employee.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="icon" type="png" href="../asset/logo/logomain.png" />
+  </head>
+  <body>
     <div class="employee_page">
-        <nav class="nav_bar">
-            <div class="profile">
-                <div class="profile_image">
-                    <img src="../asset/images/male.jpeg" alt="">
-                </div>
-                <h1 class="username">User Name</h1>
+      <nav class="nav_bar">
+        <div class="profile">
+          <div class="profile_image">
+            <img src="../asset/images/male.jpeg" alt="" />
+          </div>
+          <h1 class="username">User Name</h1>
+        </div>
+        <div class="brand_name">
+          <div class="brand_logo">
+            <img src="../asset/logo/logomain.png" alt="" />
+          </div>
+          <h1 class="brand_name">Kanchi Karpooram Limited</h1>
+        </div>
+        <a href="/" class="logout">Logout</a>
+      </nav>
+      <aside class="sidemenu">
+        <button class="toggle_sidemenu">
+          <i class="open_icon fas fa-arrow-right"></i>
+          <i class="close_icon fas fa-arrow-left"></i>
+        </button>
+        <ul class="menu_options">
+          <li class="menu click profile_menu active" index="0">
+            <div class="icon"><i class="fas fa-user"></i></div>
+            <p class="text">Profile</p>
+          </li>
+          <li class="menu click leave" index="1">
+            <div class="icon"><i class="fas fa-file-alt"></i></div>
+            <p class="text">Leave Request</p>
+          </li>
+          <li class="menu click late" index="2">
+            <div class="icon"><i class="fas fa-clock"></i></div>
+            <p class="text">Late Request</p>
+          </li>
+          <li class="menu click edit" index="3">
+            <div class="icon"><i class="fas fa-user-edit"></i></div>
+            <p class="text">edit profile</p>
+          </li>
+          <li class="menu click analysis" index="4">
+            <div class="icon"><i class="fas fa-chart-bar"></i></div>
+            <p class="text">Analysis</p>
+          </li>
+        </ul>
+      </aside>
+      <main class="main active">
+        <div class="message_model">
+          <div class="model_close">
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <div class="title">
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            Error
+          </div>
+          <p class="message">Your request has been submitted to the admin..!</p>
+          <div class="bar">
+            <div class="indicator"></div>
+          </div>
+        </div>
+        <header class="header">
+          <div class="user">
+            user :
+            <div class="tag">Employee</div>
+          </div>
+          <div class="current_path">
+            <div class="current_path_name">
+              <span class="" index="0">Profile</span>
             </div>
-            <div class="brand_name">
-                <div class="brand_logo">
-                    <img src="../asset/logo/logomain.png" alt="">
-                </div>
-                <h1 class="brand_name">Kanchi Karpooram Limited</h1>
+          </div>
+        </header>
+        <section
+          class="section profile_section"
+          index="0"
+          style="display: block"
+        >
+          <div class="section_header">
+            <div class="user_profile">
+              <div class="profile_image_display">
+                <img src="../asset/images/male.jpeg" alt="default image" />
+              </div>
+              <ul class="basic_details">
+                <li class="detail">user name</li>
+                <li class="detail">#01010</li>
+                <li class="detail">8B</li>
+              </ul>
             </div>
-            <a href="" class="logout">Logout</a>
-        </nav>
-        <aside class="sidemenu ">
-            <button class="toggle_sidemenu ">
-                <i class="open_icon fas fa-arrow-right"></i>
-                <i class="close_icon fas fa-arrow-left"></i>
-            </button>
-            <ul class="menu_options">
-                <li class="menu click profile_menu active" index="0">
-                    <div class="icon"><i class="fas fa-user"></i></div>
-                    <p class="text">Profile</p>
-                </li>
-                <li class="menu click leave" index="1">
-                    <div class="icon"><i class="fas fa-file-alt"></i></div>
-                    <p class="text">Leave Request</p>
-                </li>
-                <li class="menu click late" index="2">
-                    <div class="icon"><i class="fas fa-clock"></i></div>
-                    <p class="text">Late Request</p>
-                </li>
-                <li class="menu click edit" index="3">
-                    <div class="icon"><i class="fas fa-user-edit"></i></div>
-                    <p class="text">edit profile</p>
-                </li>
-                <li class="menu click analysis" index="4">
-                    <div class="icon"><i class="fas fa-chart-bar"></i></div>
-                    <p class="text">Analysis</p>
-                </li>
+            <div class="actions">
+              <div class="click btn_action" index="3">
+                <i class="fas fa-user-edit"></i>
+                <span class="none">edit profile</span>
+              </div>
+            </div>
+          </div>
+          <div class="section_body">
+            <ul class="personal_details">
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-user"></i></div>
+                Name: <span class="uname">username</span>
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-id-card"></i></div>
+                ID: <span class="uid"> #01010</span>
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-venus-mars"></i></div>
+                Gender: <span class="ugender">Male</span>
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-phone-alt"></i></div>
+                Contact: <span class="ucontact">+91 9090909090</span>
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-envelope"></i></div>
+                Email: <span class="uemail">username@gmail.com</span>
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                Address:
+                <span class="uaddress"
+                  >19/8012, north street, village name, post name, talk name,
+                  city name, distric name, state name</span
+                >
+              </li>
             </ul>
-        </aside>
-        <main class="main active">
-            <div class="message_model">
-                <div class="model_close">
-                    <i class="fas fa-times-circle"></i>
+            <ul class="personal_details">
+              <li class="detail_display">
+                <div class="detail_icon">
+                  <i class="fas fa-calendar-check"></i>
                 </div>
-                <div class="title">
-                    <i class="fas fa-exclamation-circle"></i> 
-                    <i class="fas fa-check-circle"></i>
-                    Error
+                DOJ: <span class="udoj"> 11/11/1111</span>
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-user-tie"></i></div>
+                Branch: daily rated or fixed rate
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-briefcase"></i></div>
+                Designation: HR
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-clock"></i></div>
+                Shift: 8A
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-bed"></i></div>
+                No of Leave Avail: 20
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon"><i class="fas fa-clock"></i></div>
+                No of Late Avail: 20
+              </li>
+              <li class="detail_display">
+                <div class="detail_icon">
+                  <i class="fas fa-check-circle"></i>
                 </div>
-                <p class="message">
-                    Your request has been  submitted to the admin..!
-                </p>
-                <div class="bar">
-                    <div class="indicator"></div>
-                </div>
+                Status: Active
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section leave_section" index="1" style="display: none">
+          <div class="inner_section">
+            <div class="seperate_section image_container">
+              <img src="../asset/images/Forms-bro.png" alt="" />
             </div>
-            <header class="header">
-               <div class="user"> user : <div class="tag">Employee</div></div>
-               <div class="current_path">
-                    <div class="current_path_name">
-                        <span class="" index="0">Profile</span>
-                    </div>
-               </div>
-            </header> 
-            <section class="section profile_section" index="0" style="display: block ;">
-                <div class="section_header">
-                    <div class="user_profile">
-                        <div class="profile_image_display">
-                            <img src="../asset/images/male.jpeg" alt="default image">
-                        </div>
-                        <ul class="basic_details">
-                            <li class="detail">user name</li>
-                            <li class="detail">#01010</li>
-                            <li class="detail">8B</li>
-                        </ul>
-                    </div>
-                    <div class="actions">
-                        <div class="click btn_action" index="3">
-                            <i class="fas fa-user-edit"></i>
-                            <span class="none">edit profile</span>
-                        </div>
-                    </div>
+            <div class="seperate_section request_form">
+              <form action="" method="post" class="leave_request">
+                <h1>Leave Form</h1>
+                <div class="input_field">
+                  <label>From </label>
+                  <input
+                    type="date"
+                    name="fromdate"
+                    id="fromdate"
+                    placeholder="dd-mm-yyyy"
+                    required
+                  />
                 </div>
-                <div class="section_body">
-                    <ul class="personal_details">
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-user"></i></div> Name: <span class="uname">username</span></li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-id-card"></i></div> ID: <span class="uid"> #01010</span></li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-venus-mars"></i></div> Gender: <span class="ugender">Male</span></li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-phone-alt"></i></div> Contact: <span class="ucontact">+91 9090909090</span></li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-envelope"></i></div> Email: <span class="uemail">username@gmail.com</span></li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-map-marker-alt"></i></div> Address: <span class="uaddress">19/8012, north street, village name, post name, talk name, city name, distric name, state name</span></li>
-                    </ul>
-                    <ul class="personal_details">
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-calendar-check"></i></div> DOJ: <span class="udoj"> 11/11/1111</span></li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-user-tie"></i></div> Branch: daily rated or fixed rate</li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-briefcase"></i></div> Designation: HR</li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-clock"></i></div> Shift: 8A</li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-bed"></i></div> No of Leave Avail: 20</li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-clock"></i></div> No of Late Avail: 20</li>
-                        <li class="detail_display"><div class="detail_icon"><i class="fas fa-check-circle"></i></div> Status: Active</li>
-                    </ul>
+                <div class="input_field">
+                  <label>To </label>
+                  <input
+                    type="date"
+                    name="todate"
+                    id="todate"
+                    placeholder="dd-mm-yyyy"
+                    required
+                  />
                 </div>
-            </section>
-            <section class="section leave_section" index="1" style="display: none ;">
-                <div class="inner_section">
-                    <div class="seperate_section image_container">
-                        <img src="../asset/images/Forms-bro.png" alt="">
-                    </div>
-                    <div class="seperate_section request_form">
-                        <form action="" method="post" class="leave_request">
-                            <h1>Leave Form</h1>
-                            <div class="input_field">
-                                <label>From </label>
-                                <input type="date" name="fromdate" id="fromdate" placeholder="dd-mm-yyyy" required>
-                            </div>
-                            <div class="input_field">
-                                <label>To </label>
-                                <input type="date" name="todate" id="todate" placeholder="dd-mm-yyyy" required>
-                            </div>
-                            <div class="input_field">
-                                <label>Reason </label>
-                                <textarea name="" id="" cols="30" rows="5" placeholder="enter your reason here"></textarea>
-                            </div>
-                            <div class="input_field">
-                                <button type="submit" class="requestButton">Request</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="input_field">
+                  <label>Reason </label>
+                  <textarea
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="5"
+                    placeholder="enter your reason here"
+                  ></textarea>
                 </div>
-            </section>
-            <section class="section leave_section" index="2" style="display: none ;">
-                <div class="inner_section">
-                    <div class="seperate_section image_container">
-                        <img src="../asset/images/Lateness-rafiki.png" alt="">
-                    </div>
-                    <div class="seperate_section request_form">
-                        <form action="" method="post" class="leave_request">
-                            <h1>Late Form</h1>
-                            <div class="input_field">
-                                <label>From </label>
-                                <input type="time" name="fromdate" id="fromdate" placeholder="dd-mm-yyyy" required>
-                            </div>
-                            <div class="input_field">
-                                <label>To </label>
-                                <input type="time" name="todate" id="todate" placeholder="dd-mm-yyyy" required>
-                            </div>
-                            <div class="input_field">
-                                <label>Reason </label>
-                                <textarea name="" id="" cols="30" rows="5" placeholder="enter your reason here"></textarea>
-                            </div>
-                            <div class="input_field">
-                                <button type="submit" class="requestButton">Request</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="input_field">
+                  <button type="submit" class="requestButton">Request</button>
                 </div>
-            </section>
-            <section class="section edit_section" index="3" style="display: none ;">
-                <div class="inner_section">
-                    <h1 class="text">
-                        Editable Content
-                    </h1>
-                    <div class="edit_form">
-                        
-                        <div class="input_field">
-                            <label>Name</label>
-                            <input type="text" name="name" id="name"  class="input" value="john doe" readonly>
-                            <button class="btn submit">save</button>
-                            <button class="btn cancel">cancel</button>
-                        </div>
-                        <div class="input_field">
-                            <label>Gender</label>
-                            <input type="text" name="gender" id="gender"  class="input" value="male" readonly>
-                            <button class="btn submit">save</button>
-                            <button class="btn cancel">cancel</button>
-                        </div>
-                        <div class="input_field">
-                            <label>Email</label>
-                            <input type="text" name="email" id="email"  class="input" value="johndoe@gmail.com" readonly>
-                            <button class="btn submit">save</button>
-                            <button class="btn cancel">cancel</button>
-                        </div>
-                        <div class="input_field">
-                            <label>Contact No</label>
-                            <input type="text" name="contact" id="contact"  class="input" value="+91 9087564321" readonly>
-                            <button class="btn submit">save</button>
-                            <button class="btn cancel">cancel</button>
-                        </div>
-                        <div class="input_field">
-                            <label>DOJ</label>
-                            <input type="date" name="contact" id="contact"  class="input" value="1111-11-11" readonly>
-                            <button class="btn submit">save</button>
-                            <button class="btn cancel">cancel</button>
-                        </div>
-                        <div class="input_field">
-                            <label>Address</label>
-                            <textarea name="address" id="address" cols="30" rows="10" class="input" readonly>19/8012, north street, village name, post name, talk name, city name, distric name, state name</textarea>
-                            <button class="btn submit">save</button>
-                            <button class="btn cancel">cancel</button>
-                        </div>
-                    </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="section leave_section" index="2" style="display: none">
+          <div class="inner_section">
+            <div class="seperate_section image_container">
+              <img src="../asset/images/Lateness-rafiki.png" alt="" />
+            </div>
+            <div class="seperate_section request_form">
+              <form action="" method="post" class="leave_request">
+                <h1>Late Form</h1>
+                <div class="input_field">
+                  <label>From </label>
+                  <input
+                    type="time"
+                    name="fromdate"
+                    id="fromdate"
+                    placeholder="dd-mm-yyyy"
+                    required
+                  />
                 </div>
-            </section>
-            <section class="section analysis_section" index="4" style="display: none ;">
-                <div class="inner_section">
-                    <h1 class="text">
-                        Employee Analysis
-                    </h1>
-                    <div class="analysis_header">
-                        <div class="analysis_card">
-                            <div class="card_title">Attendance Analysis</div>
-                            <div class="chart">
-                                <canvas id="attendanceChart" class="chart-container"></canvas>
-                            </div>
-                        </div>
-                        <div class="analysis_card">
-                            <div class="card_title">Request Analysis</div>
-                            <div class="chart">
-                                <canvas id="workChart" class="chart-container"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table">
-                        <h1 class="title">Request Table</h1>
-                        <table class="request_table">
-                            <thead>
-                                <th>sno</th>
-                                <th>request type</th>
-                                <th>request date</th>
-                                <th>request reason</th>
-                                <th>request status</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Leave</td>
-                                    <td>11/11/1111</td>
-                                    <td>bus missed</td>
-                                    <td>accepted</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>late</td>
-                                    <td>11/11/1111</td>
-                                    <td>bus missed</td>
-                                    <td>declined</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="input_field">
+                  <label>To </label>
+                  <input
+                    type="time"
+                    name="todate"
+                    id="todate"
+                    placeholder="dd-mm-yyyy"
+                    required
+                  />
                 </div>
-            </section>
-        </main>
+                <div class="input_field">
+                  <label>Reason </label>
+                  <textarea
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="5"
+                    placeholder="enter your reason here"
+                  ></textarea>
+                </div>
+                <div class="input_field">
+                  <button type="submit" class="requestButton">Request</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="section edit_section" index="3" style="display: none">
+          <div class="inner_section">
+            <h1 class="text">Editable Content</h1>
+            <div class="edit_form">
+              <div class="input_field">
+                <label>Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="input"
+                  value="john doe"
+                  readonly
+                />
+                <button class="btn submit">save</button>
+                <button class="btn cancel">cancel</button>
+              </div>
+              <div class="input_field">
+                <label>Gender</label>
+                <input
+                  type="text"
+                  name="gender"
+                  id="gender"
+                  class="input"
+                  value="male"
+                  readonly
+                />
+                <button class="btn submit">save</button>
+                <button class="btn cancel">cancel</button>
+              </div>
+              <div class="input_field">
+                <label>Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  class="input"
+                  value="johndoe@gmail.com"
+                  readonly
+                />
+                <button class="btn submit">save</button>
+                <button class="btn cancel">cancel</button>
+              </div>
+              <div class="input_field">
+                <label>Contact No</label>
+                <input
+                  type="text"
+                  name="contact"
+                  id="contact"
+                  class="input"
+                  value="+91 9087564321"
+                  readonly
+                />
+                <button class="btn submit">save</button>
+                <button class="btn cancel">cancel</button>
+              </div>
+              <div class="input_field">
+                <label>DOJ</label>
+                <input
+                  type="date"
+                  name="contact"
+                  id="contact"
+                  class="input"
+                  value="1111-11-11"
+                  readonly
+                />
+                <button class="btn submit">save</button>
+                <button class="btn cancel">cancel</button>
+              </div>
+              <div class="input_field">
+                <label>Address</label>
+                <textarea
+                  name="address"
+                  id="address"
+                  cols="30"
+                  rows="10"
+                  class="input"
+                  readonly
+                >
+19/8012, north street, village name, post name, talk name, city name, distric name, state name</textarea
+                >
+                <button class="btn submit">save</button>
+                <button class="btn cancel">cancel</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="section analysis_section"
+          index="4"
+          style="display: none"
+        >
+          <div class="inner_section">
+            <h1 class="text">Employee Analysis</h1>
+            <div class="analysis_header">
+              <div class="analysis_card">
+                <div class="card_title">Attendance Analysis</div>
+                <div class="chart">
+                  <canvas id="attendanceChart" class="chart-container"></canvas>
+                </div>
+              </div>
+              <div class="analysis_card">
+                <div class="card_title">Request Analysis</div>
+                <div class="chart">
+                  <canvas id="workChart" class="chart-container"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="table">
+              <h1 class="title">Request Table</h1>
+              <table class="request_table">
+                <thead>
+                  <th>sno</th>
+                  <th>request type</th>
+                  <th>request date</th>
+                  <th>request reason</th>
+                  <th>request status</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Leave</td>
+                    <td>11/11/1111</td>
+                    <td>bus missed</td>
+                    <td>accepted</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>late</td>
+                    <td>11/11/1111</td>
+                    <td>bus missed</td>
+                    <td>declined</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- 
+
     <script>
-        // Attendance Data
-        let attendanceData = {
-            absent: 20,
-            present: 10,
-        };
+      // Attendance Data
+      let attendanceData = {
+        absent: 20,
+        present: 10,
+      };
 
-        // Work Data
-        let workData = {
-            leaveRequest: 15,
-            lateRequest: 17
-        };
+      // Work Data
+      let workData = {
+        leaveRequest: 15,
+        lateRequest: 17,
+      };
 
-        // Create Chart function
-        function createChart(data, canvasId, title) {
-            let ctx = document.getElementById(canvasId).getContext('2d');
-            let labels = Object.keys(data);
-            let values = Object.values(data);
+      // Create Chart function
+      function createChart(data, canvasId, title) {
+        let ctx = document.getElementById(canvasId).getContext("2d");
+        let labels = Object.keys(data);
+        let values = Object.values(data);
 
-            let chart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: labels.map(label => `${label} ${data[label]} days`),
-                    datasets: [{
-                        label: title,
-                        data: values,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.7)',
-                            'rgba(54, 162, 235, 0.7)',
-                            'rgba(255, 206, 86, 0.7)',
-                            'rgba(75, 192, 192, 0.7)',
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: title
-                    }
-                }
-            });
-        }
+        let chart = new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels: labels.map((label) => `${label} ${data[label]} days`),
+            datasets: [
+              {
+                label: title,
+                data: values,
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.7)",
+                  "rgba(54, 162, 235, 0.7)",
+                  "rgba(255, 206, 86, 0.7)",
+                  "rgba(75, 192, 192, 0.7)",
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            title: {
+              display: true,
+              text: title,
+            },
+          },
+        });
+      }
 
-        // Create Attendance Chart
-        createChart(attendanceData, 'attendanceChart', 'Attendance Composition');
+      // Create Attendance Chart
+      createChart(attendanceData, "attendanceChart", "Attendance Composition");
 
-        // Create Work Chart
-        createChart(workData, 'workChart', 'Work Composition');
+      // Create Work Chart
+      createChart(workData, "workChart", "Work Composition");
     </script>
 
     <script src="js/employee.js"></script>
-</body>                                                         
+  </body>
 </html>
